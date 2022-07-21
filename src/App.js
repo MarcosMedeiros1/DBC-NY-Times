@@ -1,24 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import "./App.css";
+import Home from "./pages/Home/Home";
 
 function App() {
+  const [noticia, setNoticia] = useState({});
+  const key = "lJ6gYehzzdeNq5HGGB5WrW5SmkHtB5dY";
+  const setup = async () => {
+    try {
+      const { data } = await axios.get(
+        `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${key}`,
+      );
+      setNoticia(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    setup();
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
+        </Routes>
+        {/* <Footer /> */}
+      </BrowserRouter>
+    </>
   );
 }
 
