@@ -2,11 +2,13 @@
   display: grid;
 }
 
+/* Primeira linha do header */
 .homeHeader > div:first-child {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   justify-content: space-between;
-
-  padding: 4px 0 8px;
+  align-content: center;
+  padding: 4px 6px 8px;
 }
 
 .homeHeader > div:first-child button {
@@ -18,7 +20,17 @@
 
 .homeHeader > div:first-child > div:first-child {
   display: flex;
+  justify-content: flex-start;
   gap: 32px;
+}
+
+.homeHeader > div:first-child > div:first-child > button {
+  font-size: 14px;
+}
+
+.homeHeader > div:first-child > div:nth-child(2) {
+  display: flex;
+  justify-content: center;
 }
 
 .homeHeader > div:first-child > div:nth-child(2) > button {
@@ -34,6 +46,7 @@
 
 .homeHeader > div:first-child > div:nth-child(3) {
   display: flex;
+  justify-content: flex-end;
   gap: 8px;
 }
 
@@ -49,4 +62,31 @@
 
 .homeHeader > div:first-child > div:nth-child(3) > button:hover {
   background-color: #326891;
+}
+
+/* Linha central do header */
+.homeHeader > div:nth-child(2) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.homeHeader > div:nth-child(2) > div:first-child {
+  display: grid;
+  justify-content: space-between;
+}
+
+.homeHeader > div:nth-child(2) small {
+  font-size: 12px;
+}
+
+.homeHeader > div:nth-child(2) > div:last-child {
+  display: grid;
+}
+
+.homeHeader > div:nth-child(2) > svg {
+  width: 430px;
+  height: 58.4px;
 }
