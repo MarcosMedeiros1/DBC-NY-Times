@@ -1,0 +1,103 @@
+.footer {
+  font-family: Helvetica, Arial, sans-serif;
+  display: grid;
+  gap: 20px;
+}
+.footer::before {
+  background-color: rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(226, 226, 226);
+  border-top: 2px solid rgb(226, 226, 226);
+  content: "";
+  display: block;
+  height: 1px;
+  margin-top: 20px;
+}
+
+.footer ul {
+  list-style: none;
+}
+
+.footer svg {
+  width: 200px;
+}
+
+.footer > div {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.footer > div > nav > strong {
+  font-size: 14px;
+}
+
+.footer > div > nav > ul {
+  display: grid;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.footer > div > nav > ul > li > a {
+  text-decoration: none;
+  color: #000;
+  font-size: 14px;
+  padding: 4px 0;
+}
+
+.footer > div > nav > ul > li > a:hover {
+  text-decoration: underline;
+}
+
+.footer > div > nav:last-child {
+  position: relative;
+}
+
+.footer > div > nav:last-child::before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  left: -1rem;
+  top: calc(-0.1rem + 2px);
+  border-left: 1px solid #c7c7c7;
+}
+
+.footer > div > nav:last-child > ul > li > a {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.footer > div > nav:last-child > ul:nth-child(3) {
+  border-bottom: 1px solid #c7c7c7;
+  padding: 6px 0;
+  gap: 4px;
+}
+
+.footer > div > nav:last-child > ul:nth-child(4) {
+  gap: 4px;
+}
+
+.footer > div > nav:last-child > ul:nth-child(3) > li > a,
+.footer > div > nav:last-child > ul:nth-child(4) > li > a {
+  font-size: 12px;
+}
+
+.footer > nav {
+  border-top: 1px solid #c7c7c7;
+  padding: 8px 0 32px;
+}
+
+.footer > nav > ul {
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer > nav > ul > li > a {
+  font-size: 12px;
+  text-decoration: none;
+  color: #727272;
+  padding: 10px 0;
+}
+
+.footer > nav > ul > li > a:hover {
+  text-decoration: underline;
+}

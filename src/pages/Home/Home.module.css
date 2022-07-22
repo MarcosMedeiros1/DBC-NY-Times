@@ -7,23 +7,6 @@
   font-size: 14px;
 }
 
-.home > section > div {
-  font-weight: bold;
-}
-
-.home > section > div:first-child > span:first-child {
-  color: #d0021b;
-  margin-right: 12px;
-  font-size: 12px;
-  font-weight: bolder;
-}
-
-.home > section > div > span {
-  font-weight: normal;
-  color: #d0021b;
-  font-size: 12px;
-}
-
 .homeMain {
   display: grid;
   justify-content: center;

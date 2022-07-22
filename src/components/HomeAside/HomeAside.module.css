@@ -7,8 +7,9 @@ aside::before {
   content: "";
   height: 100%;
   position: absolute;
-  left: calc(-1rem);
-  top: calc(2rem);
+  left: -1rem;
+  top: calc(-0.1rem + 2px);
+
   border-left: 1px solid #c7c7c7;
 }
 
@@ -25,4 +26,9 @@ aside > div {
   gap: 8px;
   border-top: 1px solid #000;
   padding: 24px 0 24px;
+}
+
+aside > div > div {
+  display: grid;
+  gap: 8px;
 }

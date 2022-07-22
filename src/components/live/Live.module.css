@@ -1,0 +1,16 @@
+.live > div {
+  font-weight: bold;
+}
+
+.live > div:first-child > span:first-child {
+  color: #d0021b;
+  margin-right: 12px;
+  font-size: 12px;
+  font-weight: bolder;
+}
+
+.live > div > span {
+  font-weight: normal;
+  color: #d0021b;
+  font-size: 12px;
+}
