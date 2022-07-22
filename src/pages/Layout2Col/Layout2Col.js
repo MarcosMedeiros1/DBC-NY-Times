@@ -4,7 +4,7 @@ import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
 import PagesHeader from "../../components/PagesHeader/PagesHeader"
 import style from "./Layout2Col.module.css"
 
-function Science() {
+function Science({titulo}) {
 
     async function setup() {
         try {
@@ -30,10 +30,10 @@ function Science() {
 
     return (
         <div>
-            <PagesHeader titulo='Sciense' />
+            <PagesHeader titulo={titulo}/>
 
             <div className="container">
-                <section className={style.sciensePrincipal}>
+                <section className={style.layoutPrincipal}>
 
                     <div>
                         <p>IMG</p>

@@ -1,4 +1,4 @@
-.sciensePrincipal {
+.layoutPrincipal {
     width: 1200px;
     height: 555px;
     margin-top: 20px;
@@ -6,19 +6,19 @@
     background-color: #999;
 }
 
-.sciensePrincipal>div:nth-child(1){
+.layoutPrincipal>div:nth-child(1){
     width: 620px;
     height: 555px;
     border-right: 1px solid #f3f3f3;   
 }
 
-.sciensePrincipal>div:nth-child(1)>p {
+.layoutPrincipal>div:nth-child(1)>p {
     width: 605px;
     height: 400px;
     background-color: blue;
 }
 
-.sciensePrincipal>div:nth-child(2){
+.layoutPrincipal>div:nth-child(2){
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -28,33 +28,32 @@
    
 }
 
-.sciensePrincipal>div:nth-child(2)>p{
+.layoutPrincipal>div:nth-child(2)>p{
     width: 305px;
     height: 200px;
     background-color: aqua;    
 }
 
-.sciensePrincipal>div>div {
+.layoutPrincipal>div>div {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
 }
 
-.sciensePrincipal>div>div>h1 {
+.layoutPrincipal>div>div>h1 {
     font-size: 22px;
 }
 
-.sciensePrincipal>aside {
+.layoutPrincipal>aside {
     display: flex;
     align-items: center;
     flex-direction: column;
     width: 240px;
-    height: 555px;
-    
+    height: 555px;    
 }
 
-.sciensePrincipal>aside>div {
+.layoutPrincipal>aside>div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,6 +63,6 @@
     row-gap: 10px;
 }
 
-.sciensePrincipal>aside>div:nth-child(2) {
+.layoutPrincipal>aside>div:nth-child(2) {
     border-top: 1px solid #f3f3f3;    
 }

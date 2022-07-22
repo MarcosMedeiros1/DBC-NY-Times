@@ -3,13 +3,14 @@ import { useEffect, useState } from "react";
 import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
 import PagesHeader from "../../components/PagesHeader/PagesHeader"
 import style from "./Layout3Col.module.css"
-function Tecnologia() {
+
+function LayoutCol3({titulo}) {
   return (
     <div>
-      <PagesHeader titulo='Tech' />
+      <PagesHeader titulo={titulo}/>
       <div className="container">
 
-        <section className={style.sciensePrincipal}>
+        <section className={style.layoutPrincipal}>
 
           <div>
             <p>IMG</p>
@@ -45,4 +46,4 @@ function Tecnologia() {
     </div>
   )
 }
-export default Tecnologia;
+export default LayoutCol3;

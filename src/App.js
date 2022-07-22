@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import BotoesHeader from "./components/BotoesHeader/BotoesHeader";
 import Layout2Col from "./pages/Layout2Col/Layout2Col";
 import Layout3Col from "./pages/Layout3Col/Layout3Col";
+import Layout1Col from "./pages/Layout1Col/Layout1Col";
 
 function App() {
   const [noticia, setNoticia] = useState({});
@@ -33,7 +34,11 @@ function App() {
         <Routes>
           {/*   <Route path="/" element={<Home />}></Route> */}
           {/* <Route path="/" element={<Layout2Col titulo="Sciense" />}></Route> */}
-          <Route path="/" element={<Layout3Col titulo="Tech"/>}></Route>
+          {/* <Route path="/" element={<Layout2Col titulo="Politic" />}></Route> */}
+          {/* <Route path="/" element={<Layout3Col titulo="Tech" />}></Route> */}
+          {/* <Route path="/" element={<Layout3Col titulo="Work" />}></Route> */}
+          {/* <Route path="/" element={<Layout1Col titulo="Healt" />}></Route> */}
+
 
         </Routes>
         {/* <Footer /> */}

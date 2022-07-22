@@ -1,4 +1,4 @@
-.sciensePrincipal {
+.layoutPrincipal {
     width: 1200px;
     height: 710px;
     display: grid;
@@ -7,7 +7,7 @@
 
 }
 
-.sciensePrincipal>div {
+.layoutPrincipal>div {
     display: flex; 
     flex-direction: column;  
     width: 840px;
@@ -16,22 +16,22 @@
     border-right: 1px solid #f3f3f3;
 }
 
-.sciensePrincipal>div>p{
+.layoutPrincipal>div>p{
     width: 810px;
     height: 540px;
     background-color: yellow;
 }
-.sciensePrincipal>div>div{
+.layoutPrincipal>div>div{
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 30px;
 }
-.sciensePrincipal>div>div>h1{
+.layoutPrincipal>div>div>h1{
     font-size: 22px;
 }
 
-.sciensePrincipal>aside {
+.layoutPrincipal>aside {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
@@ -40,7 +40,7 @@
     height: 710px;
 }
 
-.sciensePrincipal>aside>div {
+.layoutPrincipal>aside>div {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -50,7 +50,7 @@
     row-gap: 10px;
 }
 
-.sciensePrincipal>aside>div:nth-child(2) {
+.layoutPrincipal>aside>div:nth-child(2) {
     border-top: 1px solid #f3f3f3;
     border-bottom: 1px solid #f3f3f3;
 }
