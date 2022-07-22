@@ -1,0 +1,16 @@
+.pagesHeader {
+    margin-top: 45px;
+}
+
+.pagesHeader h1{
+    font-size: 38px;    
+}
+
+.pagesHeader>div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 34px;
+    border-top: 1px solid #f4f4f4;
+    border-bottom: 2px solid black;
+}
