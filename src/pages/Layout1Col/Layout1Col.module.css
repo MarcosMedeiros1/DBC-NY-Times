@@ -1,64 +1,78 @@
-.layout {
-    background-color: #999;
-    margin-top: 30px;
+.noticiaPrincipal {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    margin-top: 20px;
+    padding-bottom: 20px;  
 }
 
-.layout>div:nth-child(1) {
-    width: 1200px;
-    height: 545px;
+.noticiaPrincipal h1 {
+    font-size: 35px;
+    line-height: 50px;
+    font-weight: 200;
+}
+
+.noticiaPrincipal p {
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 8px;
+}
+
+.noticiaPrincipal p:nth-child(3) {
+    color: #999;
+    margin-top: 8px;
+}
+
+.noticiaPrincipal img {
+    width: 790px;
+    padding-left: 15px;        
+}
+
+.noticiaPrincipal:nth-child(1) {
     display: flex;
     align-items: center;
-    background-color: #999;
-    border: 1px solid #f3f3f3;
 }
 
-.layout>div:nth-child(1)>div {
+.displayflex {
     display: flex;
-    flex-flow: column wrap;
 }
 
-.layout>div:nth-child(1)>span {
-    width: 785px;
-    height: 525px;
-    background-color: #f3f3f3;
-}
-
-.layout3Column {
-    margin-top: 30px;
-    background-color: #999;
-    border-bottom: 1px solid #f3f3f3;
-}
-
-.layout3Column>div {
-   display: flex;
-}
-
-.layout3Column>div>div {
+.cardNoticia {
+    width: 400px;
+    margin: 20px auto;
     display: flex;
-    flex-direction: column;
-    align-items: center; 
-    width: 395px;
-    height: 495px;
-    text-align: justify;
-} 
+    align-items: center;
+    flex-direction: column; 
+    padding: 25px;
+}
 
-.layout3Column>div>div:nth-child(2){
-    border-left: 1px solid #f3f3f3;
-    border-right: 1px solid #f3f3f3;
-} 
+section {
+    border-bottom: 1px solid #dfdfdf;   
+}
 
-.layout3Column>div>div>p {
-    width: 372px;
-    height: 245px;
-    background-color: #ffffff;
+.cardNoticia img {
+    width: 370px;
+    margin-bottom: 10px;
+    margin-top: -25px;
+}
+
+.cardNoticia h2{
+    font-size: 24px;
+    font-weight: 200;
+    margin-top: 15px;
+}
+
+.cardNoticia p {
+    margin-top: 8px;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.cardNoticia p:nth-child(3) {
+    color: #999;
 
 }
 
-.layout3Column>div>div>div>p {
-    margin-top: 10px;
-} 
-
-.layout3Column>div>div>div {
-    width: 372px;
-    margin-top: 40px;
+.cardNoticia:nth-child(2) {
+    border-left: 1px solid #dfdfdf;
+    border-right: 1px solid #dfdfdf;
 }

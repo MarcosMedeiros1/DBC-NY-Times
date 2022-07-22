@@ -7,7 +7,7 @@ import '../../App.css';
 function PagesHeader({titulo}) {
     return (
         <div className="container">
-            <BotoesHeader />
+            <BotoesHeader titulo={titulo} />
             <div className={styles.pagesHeader}>
                 <h1>{titulo}</h1>
                 <div>

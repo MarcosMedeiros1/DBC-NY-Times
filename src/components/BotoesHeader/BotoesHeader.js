@@ -5,14 +5,14 @@ import BntSubscribe from "./BtnSubscribe/BntSubscribe"
 import style from "./BotoesHeader.module.css"
 import '../../App.css'
 
-function BotoesHeader() {
+function BotoesHeader({titulo}) {
   return (
     <div className="container">
       <div className={style.header}>
         <div>
           <BtnSanduiche></BtnSanduiche>
           <BtnLupa></BtnLupa>
-          <h1>TITULO</h1>
+          <h1>{titulo}</h1>
         </div>
         <div>
         <svg className={style.sgvTitulo} viewBox="0 0 184 25" fill="#000">

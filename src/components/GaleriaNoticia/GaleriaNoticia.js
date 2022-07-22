@@ -1,9 +1,10 @@
 import style from "./GaleriaNoticia.module.css"
+import css from '../../App.css'
 
 function GaleriaNoticia() {
   return (
     <section className={style.galeriaNoticia}>
-          <div>
+          <div >
             <div>
               <p>IMG</p>
               <h2>DESCRICAO</h2>

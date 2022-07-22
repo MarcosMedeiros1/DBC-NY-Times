@@ -7,6 +7,7 @@ import BotoesHeader from "./components/BotoesHeader/BotoesHeader";
 import Layout2Col from "./pages/Layout2Col/Layout2Col";
 import Layout3Col from "./pages/Layout3Col/Layout3Col";
 import Layout1Col from "./pages/Layout1Col/Layout1Col";
+import GaleriaNoticia from "./components/GaleriaNoticia/GaleriaNoticia";
 
 function App() {
   const [noticia, setNoticia] = useState({});
@@ -38,8 +39,8 @@ function App() {
           {/* <Route path="/" element={<Layout3Col titulo="Tech" />}></Route> */}
           {/* <Route path="/" element={<Layout3Col titulo="Work" />}></Route> */}
           {/* <Route path="/" element={<Layout1Col titulo="Healt" />}></Route> */}
-
-
+          <Route path="/" element={<GaleriaNoticia />}></Route>
+          
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>
