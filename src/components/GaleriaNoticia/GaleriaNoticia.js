@@ -1,32 +1,59 @@
+import axios from "axios";
+import { useEffect, useState } from "react";
+
 import style from "./GaleriaNoticia.module.css"
-import css from '../../App.css'
 
 function GaleriaNoticia() {
+
+  const [noticias, setNoticias] = useState([]);
+  async function setup() {
+    try {
+      const { data } = await axios.get('https://api.nytimes.com/svc/topstories/v2/sports.json?api-key=VatkRjA6ApoASKQO1Vt3NPQcGH9o2gZ0')
+      setNoticias(data.results)
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  useEffect(() => {
+    setup()
+  }, [])
+
+  const noticiaFiltradaGaleria1 = noticias.filter((noticia, index) => {
+    return index >= 6 && index <= 10;
+  })
+  const noticiaFiltradaGaleria2 = noticias.filter((noticia, index) => {
+    return index >= 13 && index <= 17;
+  })
+
   return (
-    <section className={style.galeriaNoticia}>
-          <div >
-            <div>
-              <p>IMG</p>
-              <h2>DESCRICAO</h2>
-            </div>
-            <div>
-              <p>IMG</p>
-              <h2>DESCRICAO</h2>
-            </div>
-            <div>
-              <p>IMG</p>
-              <h2>DESCRICAO</h2>
-            </div>
-            <div>
-              <p>IMG</p>
-              <h2>DESCRICAO</h2>
-            </div>
-            <div>
-              <p>IMG</p>
-              <h2>DESCRICAO</h2>
+    <div className="container">
+
+      <section className={style.displayflex}>
+
+        {noticiaFiltradaGaleria1.map(({ abstract, multimedia }, i) =>
+          <div className={style.galeriaNoticia}>
+            <div key={i}>
+              <img src={multimedia ? multimedia[2].url : "./"} alt="" />
+              <a>{abstract}</a>
             </div>
           </div>
-        </section>
+        )}
+      </section>
+      
+      <section className={style.displayflex}>
+
+        {noticiaFiltradaGaleria2.map(({ abstract, multimedia }, i) =>
+          <div className={style.galeriaNoticia}>
+            <div key={i}>
+              <img src={multimedia ? multimedia[2].url : "./"} alt="" />
+              <a>{abstract}</a>
+            </div>
+          </div>
+        )}
+      </section>
+
+    </div>
   )
 }
-export default GaleriaNoticia
+export default GaleriaNoticia;
