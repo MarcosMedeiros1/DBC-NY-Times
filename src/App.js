@@ -5,14 +5,14 @@ import "./App.css";
 import Home from "./pages/Home/Home";
 
 function App() {
-  const [noticia, setNoticia] = useState({});
+  const [noticias, setNoticia] = useState([]);
   const key = "lJ6gYehzzdeNq5HGGB5WrW5SmkHtB5dY";
   const setup = async () => {
     try {
       const { data } = await axios.get(
         `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${key}`,
       );
-      setNoticia(data);
+      setNoticia(data.results);
     } catch (error) {
       console.log(error);
     }
@@ -26,7 +26,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
+          <Route path="/" element={<Home noticias={noticias} />}></Route>
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>
