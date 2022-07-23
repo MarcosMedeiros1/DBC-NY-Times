@@ -11,6 +11,7 @@ function Layout1Col({ titulo }) {
         try {
             const { data } = await axios.get('https://api.nytimes.com/svc/topstories/v2/health.json?api-key=VatkRjA6ApoASKQO1Vt3NPQcGH9o2gZ0')
             setNoticias(data.results)
+            console.log(data)
         } catch (error) {
             console.log(error);
         }
@@ -42,8 +43,7 @@ function Layout1Col({ titulo }) {
                                 <p>{byline}</p>
                             </div>
                             <div>
-                                <img src={multimedia ? multimedia[1].url : "./"} alt="" />
-                              
+                                <img src={multimedia ? multimedia[1].url : "./"} alt="" />                              
                             </div>
                         </div>
                     )}

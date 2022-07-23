@@ -1,68 +1,78 @@
-.layoutPrincipal {
-    width: 1200px;
-    height: 555px;
+.section {
+    display: grid;
+    grid-template-columns: 3fr 2fr 1fr;
     margin-top: 20px;
-    display: flex;
-    background-color: #999;
+    padding-bottom: 20px;
+    gap: 25px;
+    border-bottom: 1px solid #dfdfdf;    
 }
 
-.layoutPrincipal>div:nth-child(1){
-    width: 620px;
-    height: 555px;
-    border-right: 1px solid #f3f3f3;   
+.section img {
+    width: 100%;
 }
 
-.layoutPrincipal>div:nth-child(1)>p {
+.primaria{
     width: 605px;
-    height: 400px;
-    background-color: blue;
-}
-
-.layoutPrincipal>div:nth-child(2){
+    height: 580px; 
     display: flex;
-    align-items: center;
     flex-direction: column;
-    width: 320px;
-    height: 555px;
-    border-right: 1px solid #f3f3f3;
-   
 }
 
-.layoutPrincipal>div:nth-child(2)>p{
+.primaria h1{
+    margin-top: 20px;
+}
+
+.primaria p {
+    margin-top: 10px;
+    line-height: 20px;
+}
+
+.primaria p:nth-child(3){
+    color: #999;
+}
+
+.secundaria{ 
     width: 305px;
-    height: 200px;
-    background-color: aqua;    
+    height: 580px; 
 }
 
-.layoutPrincipal>div>div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 30px;
+.secundaria h1{
+    font-size: 20px;
+    margin-top: 12px;
 }
 
-.layoutPrincipal>div>div>h1 {
-    font-size: 22px;
+.secundaria p{
+    font-size: 15px;
+    line-height: 20px;
+    margin-top: 12px;
 }
 
-.layoutPrincipal>aside {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+.secundaria p:nth-child(3){
+    color: #999;
+}
+
+.aside{
+    display: flex;    
     width: 240px;
-    height: 555px;    
+    height: 290px;
 }
 
-.layoutPrincipal>aside>div {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 225px;
-    height: 260px;
-    background-color: #999;
-    row-gap: 10px;
+.aside h1 {
+    font-size: 20px;
 }
 
-.layoutPrincipal>aside>div:nth-child(2) {
-    border-top: 1px solid #f3f3f3;    
+.aside p:nth-child(3) {
+    font-size: 15px;
+    margin-top: 12px;
+}
+
+.aside p:nth-child(4) {
+    font-size: 15px;
+    color: #999;
+    margin-top: 7px;
+}
+.aside img{
+    width: 75px;
+    margin: 0 10px 20px 20px;
+    float: right;
 }

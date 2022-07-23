@@ -36,9 +36,9 @@ function App() {
           {/*   <Route path="/" element={<Home />}></Route> */}
           {/* <Route path="/" element={<Layout2Col titulo="Sciense" />}></Route> */}
           {/* <Route path="/" element={<Layout2Col titulo="Politic" />}></Route> */}
-          {/* <Route path="/" element={<Layout3Col titulo="Tech" />}></Route> */}
-          {/* <Route path="/" element={<Layout3Col titulo="Work" />}></Route> */}
-          <Route path="/" element={<Layout1Col titulo="Healt" />}></Route>
+          {/* <Route path="/" element={<Layout3Col titulo="Tech" pagina={technology}/>}></Route> */}
+          <Route path="/" element={<Layout3Col titulo="World News" pagina="world"/>}></Route>
+          {/* <Route path="/" element={<Layout1Col titulo="Healt" />}></Route> */}
          
           
         </Routes>
