@@ -1,4 +1,5 @@
 import axios from "axios";
+import moment from "moment";
 import { useEffect, useState } from "react";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import style from "./Layout4.module.css";
@@ -38,30 +39,32 @@ function Layout4({ titulo, pagina, opcoes }) {
         <section className={style.displayGrid}>
           <div className={style.displayFlex}>
             {noticiasPrincipal.map(
-              ({ title, abstract, byline, multimedia }, i) => (
+              ({ title, abstract, byline, multimedia, published_date }, i) => (
                 <div className={style.layoutPrincipal} key={i}>
                   <div>
                     <h1>{title ? title : "Has no title"}</h1>
                     <p>{abstract ? abstract : "Has no description"}</p>
-                    <p>{byline ? byline : "Has no copyright"}</p>
+                    <p>{moment(published_date).format("hh:mm")}h - {byline ? byline : "Has no copyright"}</p>
                   </div>
                   <div>
                     <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                    <small>{multimedia ? multimedia[1].copyright : "."}</small>
                   </div>
                 </div>
               ),
             )}
             <div>
               {noticiasAnexoPrinc.map(
-                ({ title, abstract, byline, multimedia }, i) => (
+                ({ title, abstract, byline, multimedia, published_date }, i) => (
                   <div className={style.layoutAnexoPrinc} key={i}>
                     <div>
                       <h1>{title ? title : "Has no title"}</h1>
                       <p>{abstract ? abstract : "Has no description"}</p>
-                      <p>{byline ? byline : "Has no copyright"}</p>
+                      <p>{moment(published_date).format("hh:mm")}h - {byline ? byline : "Has no copyright"}</p>
                     </div>
                     <div>
                       <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                      <small>{multimedia ? multimedia[1].copyright : "."}</small>
                     </div>
                   </div>
                 ),
@@ -70,7 +73,7 @@ function Layout4({ titulo, pagina, opcoes }) {
           </div>
 
           <div className={style.columnNoticias}>
-            {noticiasAside.map(({ title, abstract, byline, multimedia }, i) => (
+            {noticiasAside.map(({ title, abstract, byline, multimedia, published_date }, i) => (
               <aside className={style.asideLayout4} key={i}>
                 <div>
                   <h2>{title ? title : "Has no title"}</h2>
@@ -78,7 +81,7 @@ function Layout4({ titulo, pagina, opcoes }) {
                 <div className={`${style.displayFlex} ${style.flexDirection}`}>
                   <div>
                     <p>{abstract ? abstract : "Has no description"}</p>
-                    <p>{byline ? byline : "Has no copyright"}</p>
+                    <p>{moment(published_date).format("hh:mm")}h - {byline ? byline : "Has no copyright"}</p>
                   </div>
                   <div>
                     <img src={multimedia ? multimedia[2].url : "./"} alt="" />

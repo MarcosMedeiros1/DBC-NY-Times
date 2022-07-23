@@ -1,4 +1,5 @@
 import styles from "./HomeMain.module.css";
+import moment from "moment";
 
 const HomeMain = ({ noticias }) => {
   console.log(noticias);

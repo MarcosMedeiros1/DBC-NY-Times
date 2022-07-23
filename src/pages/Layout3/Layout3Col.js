@@ -1,4 +1,5 @@
 import axios from "axios";
+import moment from "moment";
 import { useEffect, useState } from "react";
 import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
@@ -36,38 +37,41 @@ function LayoutCol3({ titulo, pagina, opcoes }) {
       <div className="container">
         <section className={style.section}>
           {noticiaPrincipal.map(
-            ({ title, abstract, byline, multimedia }, i) => (
+            ({ title, abstract, byline, multimedia, published_date }, i) => (
               <div className={style.primaria} key={i}>
                 <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                <small>{multimedia ? multimedia[1].copyright : "."}</small>
                 <div>
                   <h1>{title ? title : "Has no title"}</h1>
                   <p>{abstract ? abstract : "Has no description"}</p>
-                  <p>{byline}</p>
+                  <p>{moment(published_date).format("hh:mm")}h - {byline ? byline : "Has no copyright"}</p>
                 </div>
               </div>
             ),
           )}
 
           {noticiaSecundaria.map(
-            ({ title, abstract, byline, multimedia }, i) => (
+            ({ title, abstract, byline, multimedia, published_date }, i) => (
               <div className={style.secundaria} key={i}>
                 <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                <small>{multimedia ? multimedia[1].copyright : "."}</small>
                 <div>
                   <h1>{title ? title : "Has no title"}</h1>
                   <p>{abstract ? abstract : "Has no description"}</p>
-                  <p>{byline ? byline : "Has no copyright"}</p>
+                  <p>{moment(published_date).format("hh:mm")}h - {byline ? byline : "Has no copyright"}</p>
                 </div>
               </div>
             ),
           )}
           <div>
-            {noticiaAside.map(({ title, abstract, byline, multimedia }, i) => (
+            {noticiaAside.map(({ title, abstract, byline, multimedia, published_date }, i) => (
               <div className={style.aside} key={i}>
                 <div>
                   <h1>{title ? title : "Has no title"}</h1>
                   <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                  
                   <p>{abstract ? abstract : "Has no description"}</p>
-                  <p>{byline ? byline : "Has no copyright"}</p>
+                  <p>{moment(published_date).format("hh:mm")}h - {byline ? byline : "Has no copyright"}</p>
                 </div>
               </div>
             ))}
