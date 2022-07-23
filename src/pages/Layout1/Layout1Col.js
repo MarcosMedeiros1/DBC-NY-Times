@@ -5,7 +5,9 @@ import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import style from "./Layout1Col.module.css";
 
 function Layout1Col({ titulo, opcoes }) {
+
   const [noticias, setNoticias] = useState([]);
+  
   async function setup() {
     try {
       const { data } = await axios.get(
@@ -27,6 +29,8 @@ function Layout1Col({ titulo, opcoes }) {
   const noticiaQtd3 = noticias.filter((noticia, index) => {
     return index >= 13 && index <= 15;
   });
+
+ 
   return (
     <div className="container">
       <div>
@@ -58,8 +62,8 @@ function Layout1Col({ titulo, opcoes }) {
             </div>
           ))}
         </section>
-        <GaleriaNoticia />
       </div>
+      <GaleriaNoticia noticias={noticias}/>
     </div>
   );
 }

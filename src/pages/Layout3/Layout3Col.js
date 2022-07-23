@@ -74,7 +74,7 @@ function LayoutCol3({ titulo, pagina, opcoes }) {
           </div>
         </section>
       </div>
-      {<GaleriaNoticia />}
+      {<GaleriaNoticia noticias={noticias} />}
     </div>
   );
 }

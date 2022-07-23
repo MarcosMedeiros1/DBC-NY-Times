@@ -61,7 +61,7 @@ function Layout2Col({ titulo, pagina, opcoes }) {
           </div>
         </section>
       </div>
-      <GaleriaNoticia />
+      <GaleriaNoticia noticias={noticias} />
     </div>
   );
 }
