@@ -3,6 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 2px solid black;
 }
 
 .header>div {
@@ -14,9 +15,14 @@
     font-size: 15px;
     margin-left: 20px;
     font-weight: 700;
+    text-transform: uppercase;
 }
 
 .sgvTitulo {
     width: 195px;
     height: 27px;
+}
+
+.borderBottom{
+    border-bottom: 1px solid hsla(0,0%,87.46%,1);
 }

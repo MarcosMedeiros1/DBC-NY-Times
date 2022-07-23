@@ -2,6 +2,10 @@
     display: inline;
     font-size: 11px;
     margin-left: 8px;
-    border-right: 1px solid #f4f4f4; 
-    padding-right: 10px;   
+    padding-right: 10px;
 }
+
+.borderNav {
+    border-right: 1px solid #f4f4f4;
+}
+

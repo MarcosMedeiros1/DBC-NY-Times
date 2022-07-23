@@ -47,7 +47,7 @@
 }
 
 .displayflex {
-    border-bottom: 1px solid #dfdfdf;   
+    border-bottom: 1px solid hsla(0,0%,87.46%,1);   
 }
 
 .cardNoticia img {
@@ -73,6 +73,7 @@
 }
 
 .cardNoticia:nth-child(2) {
-    border-left: 1px solid #dfdfdf;
-    border-right: 1px solid #dfdfdf;
-}
+    border-left: 1px solid hsla(0,0%,87.46%,1);
+    border-right: 1px solid hsla(0,0%,87.46%,1);
+} 
+ 

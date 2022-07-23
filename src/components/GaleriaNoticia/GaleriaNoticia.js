@@ -31,11 +31,11 @@ function GaleriaNoticia() {
 
       <section className={style.displayflex}>
 
-        {noticiaFiltradaGaleria1.map(({ abstract, multimedia }, i) =>
-          <div className={style.galeriaNoticia}>
-            <div key={i}>
+        {noticiaFiltradaGaleria1.map(({ title, multimedia }, i) =>
+          <div className={style.galeriaNoticia} key={i}>
+            <div>
               <img src={multimedia ? multimedia[2].url : "./"} alt="" />
-              <a>{abstract}</a>
+              <a>{title ? title : "Has no title"}</a>
             </div>
           </div>
         )}
@@ -43,11 +43,11 @@ function GaleriaNoticia() {
       
       <section className={style.displayflex}>
 
-        {noticiaFiltradaGaleria2.map(({ abstract, multimedia }, i) =>
-          <div className={style.galeriaNoticia}>
-            <div key={i}>
+        {noticiaFiltradaGaleria2.map(({ title, multimedia }, i) =>
+          <div className={style.galeriaNoticia} key={i}>
+            <div>
               <img src={multimedia ? multimedia[2].url : "./"} alt="" />
-              <a>{abstract}</a>
+              <a>{title ? title : "Has no title"}</a>
             </div>
           </div>
         )}

@@ -25,10 +25,10 @@
     text-align: justify;
 }
 .galeriaNoticia:nth-child(2){
-    border-left: 1px solid #dfdfdf;
-    border-right: 1px solid #dfdfdf;
+    border-left: 1px solid hsla(0,0%,87.46%,1);
+    border-right: 1px solid hsla(0,0%,87.46%,1);
 }
 .galeriaNoticia:nth-child(4){
-    border-left: 1px solid #dfdfdf;
-    border-right: 1px solid #dfdfdf;
+    border-left: 1px solid hsla(0,0%,87.46%,1);
+    border-right: 1px solid hsla(0,0%,87.46%,1);
 }

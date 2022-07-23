@@ -4,14 +4,13 @@ import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
 import PagesHeader from "../../components/PagesHeader/PagesHeader"
 import style from "./Layout3Col.module.css"
 
-function LayoutCol3({ titulo, pagina }) {
+function LayoutCol3({ titulo, pagina, opcao1, opcao2, opcao3, opcao4, opcao5, opcao6, opcao7, opcao8, opcao9, opcao10  }) {
 
   const [noticias, setNoticias] = useState([]);
   async function setup() {
     try {
       const { data } = await axios.get(`https://api.nytimes.com/svc/topstories/v2/${pagina}.json?api-key=VatkRjA6ApoASKQO1Vt3NPQcGH9o2gZ0`)
-      setNoticias(data.results)
-      console.log(data.results)
+      setNoticias(data.results)      
     } catch (error) {
       console.log(error);
     }
@@ -32,7 +31,18 @@ function LayoutCol3({ titulo, pagina }) {
 
   return (
     <div>
-      <PagesHeader titulo={titulo} />
+      <PagesHeader titulo={titulo}
+      opcao1={opcao1} 
+      opcao2={opcao2}
+      opcao3={opcao3} 
+      opcao4={opcao4} 
+      opcao5={opcao5} 
+      opcao6={opcao6}
+      opcao7={opcao7} 
+      opcao8={opcao8} 
+      opcao9={opcao9} 
+      opcao10={opcao10} 
+      />
       <div className="container">
 
         <section className={style.section}>
@@ -40,8 +50,8 @@ function LayoutCol3({ titulo, pagina }) {
             <div className={style.primaria} key={i}>
               <img src={multimedia ? multimedia[1].url : "./"} alt="" />
               <div>
-                <h1>{title}</h1>
-                <p>{abstract}</p>
+                <h1>{title ? title : "Has no title"}</h1>
+                <p>{abstract ? abstract : "Has no description"}</p>
                 <p>{byline}</p>
               </div>
             </div>
@@ -51,9 +61,9 @@ function LayoutCol3({ titulo, pagina }) {
             <div className={style.secundaria} key={i}>
               <img src={multimedia ? multimedia[1].url : "./"} alt="" />
               <div>
-                <h1>{title}</h1>
-                <p>{abstract}</p>
-                <p>{byline}</p>
+                <h1>{title ? title : "Has no title"}</h1>
+                <p>{abstract ? abstract : "Has no description"}</p>
+                <p>{byline ? byline : "Has no copyright"}</p>
               </div>
             </div>
           )}
@@ -61,10 +71,10 @@ function LayoutCol3({ titulo, pagina }) {
             {noticiaAside.map(({ title, abstract, byline, multimedia }, i) =>
               <div className={style.aside} key={i}>
                 <div>
-                  <h1>{title}</h1>
+                  <h1>{title ? title : "Has no title"}</h1>
                   <img src={multimedia ? multimedia[1].url : "./"} alt="" />
-                  <p>{abstract}</p>
-                  <p>{byline}</p>
+                  <p>{abstract ? abstract : "Has no description"}</p>
+                  <p>{byline ? byline : "Has no copyright"}</p>
                 </div>
               </div>
             )}
