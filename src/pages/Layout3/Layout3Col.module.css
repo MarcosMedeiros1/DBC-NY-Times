@@ -1,78 +1,80 @@
 .section {
-    display: grid;
-    grid-template-columns: 3fr 2fr 1fr;
-    margin-top: 20px;
-    padding-bottom: 20px;
-    gap: 25px;
-    border-bottom: 1px solid hsla(0,0%,87.46%,1);    
+  display: grid;
+  align-items: start;
+  grid-template-columns: 3fr 1.2fr 1fr;
+  margin-top: 20px;
+  padding-bottom: 20px;
+  gap: 25px;
+  border-bottom: 1px solid hsla(0, 0%, 87.46%, 1);
 }
 
 .section img {
-    width: 100%;
+  width: 100%;
 }
 
-.primaria{
-    width: 605px;
-    height: 580px; 
-    display: flex;
-    flex-direction: column;
+.primaria {
+  display: grid;
 }
 
-.primaria h1{
-    margin-top: 20px;
+.primaria h1 {
+  margin-top: 20px;
 }
 
 .primaria p {
-    margin-top: 10px;
-    line-height: 20px;
+  margin-top: 10px;
+  line-height: 20px;
 }
 
-.primaria p:nth-child(3){
-    color: #999;
+.primaria p:nth-child(3) {
+  color: #999;
 }
 
-.secundaria{ 
-    width: 305px;
-    height: 580px; 
+.secundaria {
+  width: 305px;
+  height: 580px;
 }
 
-.secundaria h1{
-    font-size: 20px;
-    margin-top: 12px;
+.secundaria h1 {
+  font-size: 20px;
+  margin-top: 12px;
 }
 
-.secundaria p{
-    font-size: 15px;
-    line-height: 20px;
-    margin-top: 12px;
+.secundaria p {
+  font-size: 15px;
+  line-height: 20px;
+  margin-top: 12px;
 }
 
-.secundaria p:nth-child(3){
-    color: #999;
+.secundaria p:nth-child(3) {
+  color: #999;
 }
 
-.aside{
-    display: flex;    
-    width: 240px;
-    height: 290px;
+.aside {
+  display: grid;
+  gap: 20px;
+}
+
+.aside > div:first-child {
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dfdfef;
 }
 
 .aside h1 {
-    font-size: 20px;
+  font-size: 20px;
 }
 
-.aside p:nth-child(3) {
-    font-size: 15px;
-    margin-top: 12px;
+.aside > div {
+  display: grid;
+  gap: 12px;
 }
 
-.aside p:nth-child(4) {
-    font-size: 15px;
-    color: #999;
-    margin-top: 7px;
+.aside > div > p:last-child {
+  font-size: 15px;
+  color: #999;
 }
-.aside img{
-    width: 75px;
-    margin: 0 10px 20px 20px;
-    float: right;
+
+.aside img {
+  width: 50%;
+  float: right;
+  padding: 0 0 4px 8px;
 }

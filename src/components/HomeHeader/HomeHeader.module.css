@@ -2,6 +2,9 @@
   display: grid;
 }
 
+.homeHeader button {
+  font-family: Helvetica, Arial, sans-serif;
+}
 /* Primeira linha do header */
 .homeHeader > div:first-child {
   display: grid;

@@ -61,16 +61,22 @@ function LayoutCol3({ titulo, pagina, opcoes }) {
             ),
           )}
           <div>
-            {noticiaAside.map(({ title, abstract, byline, multimedia }, i) => (
-              <div className={style.aside} key={i}>
-                <div>
-                  <h1>{title ? title : "Has no title"}</h1>
-                  <img src={multimedia ? multimedia[1].url : "./"} alt="" />
-                  <p>{abstract ? abstract : "Has no description"}</p>
-                  <p>{byline ? byline : "Has no copyright"}</p>
-                </div>
-              </div>
-            ))}
+            <div className={style.aside}>
+              {noticiaAside.map(
+                ({ title, abstract, byline, multimedia }, i) => (
+                  <div key={i}>
+                    <h1>{title ? title : "Has no title"}</h1>
+                    <p>
+                      <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+
+                      {abstract ? abstract : "Has no description"}
+                    </p>
+
+                    <p>{byline ? byline : "Has no copyright"}</p>
+                  </div>
+                ),
+              )}
+            </div>
           </div>
         </section>
       </div>

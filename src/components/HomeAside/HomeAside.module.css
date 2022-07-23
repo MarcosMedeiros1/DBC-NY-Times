@@ -1,34 +1,33 @@
-aside {
+.homeAside {
   display: grid;
   position: relative;
 }
 
-aside::before {
+.homeAside::before {
   content: "";
   height: 100%;
   position: absolute;
   left: -1rem;
   top: calc(-0.1rem + 2px);
-
   border-left: 1px solid #c7c7c7;
 }
 
-aside img {
+.homeAside img {
   width: 300px;
 }
 
-aside h1 {
+.homeAside h1 {
   font-size: 18px;
 }
 
-aside > div {
+.homeAside > div {
   display: grid;
   gap: 8px;
   border-top: 1px solid #000;
   padding: 24px 0 24px;
 }
 
-aside > div > div {
+.homeAside > div > div {
   display: grid;
   gap: 8px;
 }
