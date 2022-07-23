@@ -39,15 +39,17 @@ function App() {
             path="/world"
             element={
               <Layout3Col
-                titulo="World"
+                titulo="World News"
                 pagina="world"
-                opcao1="AFRICA"
-                opcao2="AMERICAS"
-                opcao3="ASIA"
-                opcao4="AUSTRALIA"
-                opcao5="CANADA"
-                opcao6="EUROPE"
-                opcao7="MIDDLE EAST"
+                opcoes={[
+                  "AFRICA",
+                  "AMERICAS",
+                  "ASIA",
+                  "AUSTRALIA",
+                  "CANADA",
+                  "EUROPE",
+                  "MIDDLE EAST",
+                ]}
               />
             }
           ></Route>
@@ -58,8 +60,7 @@ function App() {
               <Layout4
                 titulo="U.S. Politic"
                 pagina="politics"
-                opcao1="JOE BIDEN"
-                opcao2="2022 MIDTERM ELECTIONS"
+                opcoes={["JOE BIDEN", "2022 MIDTERM ELECTIONS"]}
               />
             }
           ></Route>
@@ -70,16 +71,18 @@ function App() {
               <Layout3Col
                 titulo="Technology"
                 pagina="technology"
-                opcao1="DEALBOOK"
-                opcao2="MARKETS"
-                opcao3="ECONOMY"
-                opcao4="ENERGY"
-                opcao5="MEDIA"
-                opcao6="TECHNOLOGY"
-                opcao7="PERSONAL TECH"
-                opcao8="SMALL BUSINESS"
-                opcao9="YOUR MONEY"
-                opcao10="MUTUAL FUNDS AND ETFS"
+                opcoes={[
+                  "DEALBOOK",
+                  "MARKETS",
+                  "ECONOMY",
+                  "ENERGY",
+                  "MEDIA",
+                  "TECHNOLOGY",
+                  "PERSONAL TECH",
+                  "SMALL BUSINESS",
+                  "YOUR MONEY",
+                  "MUTUAL FUNDS AND ETFS",
+                ]}
               />
             }
           ></Route>
@@ -90,13 +93,15 @@ function App() {
               <Layout2Col
                 titulo="Science"
                 pagina="science"
-                opcao1="CLIMATE"
-                opcao2="SPACE AND ASTRONOMY"
-                opcao3="HEALTH"
-                opcao4="TRILOBITES"
-                opcao5="MATTER"
-                opcao6="OUTTHERE"
-                opcao7="CORONAVIRUS OUTBREAK"
+                opcoes={[
+                  "CLIMATE",
+                  "SPACE AND ASTRONOMY",
+                  "HEALTH",
+                  "TRILOBITES",
+                  "MATTER",
+                  "OUTTHERE",
+                  "CORONAVIRUS OUTBREAK",
+                ]}
               />
             }
           ></Route>
@@ -106,12 +111,14 @@ function App() {
             element={
               <Layout1Col
                 titulo="Health"
-                opcao1="HEALTH POLICY"
-                opcao2="GLOBAL HEALTH"
-                opcao3="THE NEW OLD AGE"
-                opcao4="SCIENCE"
-                opcao5="WELL"
-                opcao6="CORONAVIRUS OUTBREAK"
+                opcoes={[
+                  "HEALTH POLICY",
+                  "GLOBAL HEALTH",
+                  "THE NEW OLD AGE",
+                  "SCIENCE",
+                  "WELL",
+                  "CORONAVIRUS OUTBREAK",
+                ]}
               />
             }
           ></Route>
@@ -119,67 +126,6 @@ function App() {
       </BrowserRouter>
     </>
   );
-
-  /* <Home /> */
-
-  /* <Route path="/" element={}></Route> */
-
-  /* <Route path="/" element={<Layout2Col titulo="Science" pagina="science"
-          opcao1="CLIMATE" 
-          opcao2="SPACE AND ASTRONOMY" 
-          opcao3="HEALTH"
-          opcao4="TRILOBITES"
-          opcao5="MATTER"
-          opcao6="OUTTHERE"
-          opcao7="CORONAVIRUS OUTBREAK"
-          />}></Route> */
-
-  /* <Route path="/" element={<Layout4 titulo="U.S. Politic" pagina="politics"
-          opcao1="JOE BIDEN"
-          opcao2="2022 MIDTERM ELECTIONS"
-          />}></Route> */
-
-  /* <Route path="/" element={<Layout3Col titulo="Technology" pagina="technology"
-           opcao1="DEALBOOK" 
-           opcao2="MARKETS" 
-           opcao3="ECONOMY"
-           opcao4="ENERGY"
-           opcao5="MEDIA"
-           opcao6="TECHNOLOGY"
-           opcao7="PERSONAL TECH"
-           opcao8="SMALL BUSINESS"
-           opcao9="YOUR MONEY"
-           opcao10="MUTUAL FUNDS AND ETFS"
-          />}></Route> */
-
-  /* <Route path="/" element={<Layout3Col titulo="World News" pagina="world"
-          opcao1="AFRICA" 
-          opcao2="AMERICAS" 
-          opcao3="ASIA"
-          opcao4="AUSTRALIA"
-          opcao5="CANADA"
-          opcao6="EUROPE"
-          opcao7="MIDDLE EAST"
-          />}></Route> */
-
-  /* <Route
-            path="/health"
-            element={
-              <Layout1Col
-                titulo="Health"
-                opcao1="HEALTH POLICY"
-                opcao2="GLOBAL HEALTH"
-                opcao3="THE NEW OLD AGE"
-                opcao4="SCIENCE"
-                opcao5="WELL"
-                opcao6="CORONAVIRUS OUTBREAK"
-              />
-            }
-          ></Route> */
-
-  /* <Route path="/" element={<NoticiaAberta />}></Route> */
-
-  /* <Footer /> */
 }
 
 export default App;
