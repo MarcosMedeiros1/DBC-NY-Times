@@ -3,6 +3,7 @@ import moment from "moment";
 import { FaBars, FaSearch, FaCloud, FaArrowUp } from "react-icons/fa";
 import styles from "./HomeHeader.module.css";
 import Home from "../../pages/Home/Home";
+import LayoutCol3 from "../../pages/Layout3/Layout3Col";
 
 const HomeHeader = () => {
   return (

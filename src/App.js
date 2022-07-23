@@ -33,48 +33,75 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          {/* <Home /> */}
           <Route path="/" element={<Home noticias={noticias} />}></Route>
 
-          {/* <Route path="/" element={<Layout2Col titulo="Science" pagina="science"
-          opcao1="CLIMATE" 
-          opcao2="SPACE AND ASTRONOMY" 
-          opcao3="HEALTH"
-          opcao4="TRILOBITES"
-          opcao5="MATTER"
-          opcao6="OUTTHERE"
-          opcao7="CORONAVIRUS OUTBREAK"
-          />}></Route> */}
+          <Route
+            path="/world"
+            element={
+              <Layout3Col
+                titulo="World"
+                pagina="world"
+                opcao1="AFRICA"
+                opcao2="AMERICAS"
+                opcao3="ASIA"
+                opcao4="AUSTRALIA"
+                opcao5="CANADA"
+                opcao6="EUROPE"
+                opcao7="MIDDLE EAST"
+              />
+            }
+          ></Route>
 
-          {/* <Route path="/" element={<Layout4 titulo="U.S. Politic" pagina="politics"
-          opcao1="JOE BIDEN"
-          opcao2="2022 MIDTERM ELECTIONS"
-          />}></Route> */}
+          <Route
+            path="/politics"
+            element={
+              <Layout4
+                titulo="U.S. Politic"
+                pagina="politics"
+                opcao1="JOE BIDEN"
+                opcao2="2022 MIDTERM ELECTIONS"
+              />
+            }
+          ></Route>
 
-          {/* <Route path="/" element={<Layout3Col titulo="Technology" pagina="technology"
-           opcao1="DEALBOOK" 
-           opcao2="MARKETS" 
-           opcao3="ECONOMY"
-           opcao4="ENERGY"
-           opcao5="MEDIA"
-           opcao6="TECHNOLOGY"
-           opcao7="PERSONAL TECH"
-           opcao8="SMALL BUSINESS"
-           opcao9="YOUR MONEY"
-           opcao10="MUTUAL FUNDS AND ETFS"
-          />}></Route> */}
+          <Route
+            path="/tech"
+            element={
+              <Layout3Col
+                titulo="Technology"
+                pagina="technology"
+                opcao1="DEALBOOK"
+                opcao2="MARKETS"
+                opcao3="ECONOMY"
+                opcao4="ENERGY"
+                opcao5="MEDIA"
+                opcao6="TECHNOLOGY"
+                opcao7="PERSONAL TECH"
+                opcao8="SMALL BUSINESS"
+                opcao9="YOUR MONEY"
+                opcao10="MUTUAL FUNDS AND ETFS"
+              />
+            }
+          ></Route>
 
-          {/* <Route path="/" element={<Layout3Col titulo="World News" pagina="world"
-          opcao1="AFRICA" 
-          opcao2="AMERICAS" 
-          opcao3="ASIA"
-          opcao4="AUSTRALIA"
-          opcao5="CANADA"
-          opcao6="EUROPE"
-          opcao7="MIDDLE EAST"
-          />}></Route> */}
+          <Route
+            path="/science"
+            element={
+              <Layout2Col
+                titulo="Science"
+                pagina="science"
+                opcao1="CLIMATE"
+                opcao2="SPACE AND ASTRONOMY"
+                opcao3="HEALTH"
+                opcao4="TRILOBITES"
+                opcao5="MATTER"
+                opcao6="OUTTHERE"
+                opcao7="CORONAVIRUS OUTBREAK"
+              />
+            }
+          ></Route>
 
-          {/* <Route
+          <Route
             path="/health"
             element={
               <Layout1Col
@@ -87,14 +114,72 @@ function App() {
                 opcao6="CORONAVIRUS OUTBREAK"
               />
             }
-          ></Route> */}
-
-          {/* <Route path="/" element={<NoticiaAberta />}></Route> */}
+          ></Route>
         </Routes>
-        {/* <Footer /> */}
       </BrowserRouter>
     </>
   );
+
+  /* <Home /> */
+
+  /* <Route path="/" element={}></Route> */
+
+  /* <Route path="/" element={<Layout2Col titulo="Science" pagina="science"
+          opcao1="CLIMATE" 
+          opcao2="SPACE AND ASTRONOMY" 
+          opcao3="HEALTH"
+          opcao4="TRILOBITES"
+          opcao5="MATTER"
+          opcao6="OUTTHERE"
+          opcao7="CORONAVIRUS OUTBREAK"
+          />}></Route> */
+
+  /* <Route path="/" element={<Layout4 titulo="U.S. Politic" pagina="politics"
+          opcao1="JOE BIDEN"
+          opcao2="2022 MIDTERM ELECTIONS"
+          />}></Route> */
+
+  /* <Route path="/" element={<Layout3Col titulo="Technology" pagina="technology"
+           opcao1="DEALBOOK" 
+           opcao2="MARKETS" 
+           opcao3="ECONOMY"
+           opcao4="ENERGY"
+           opcao5="MEDIA"
+           opcao6="TECHNOLOGY"
+           opcao7="PERSONAL TECH"
+           opcao8="SMALL BUSINESS"
+           opcao9="YOUR MONEY"
+           opcao10="MUTUAL FUNDS AND ETFS"
+          />}></Route> */
+
+  /* <Route path="/" element={<Layout3Col titulo="World News" pagina="world"
+          opcao1="AFRICA" 
+          opcao2="AMERICAS" 
+          opcao3="ASIA"
+          opcao4="AUSTRALIA"
+          opcao5="CANADA"
+          opcao6="EUROPE"
+          opcao7="MIDDLE EAST"
+          />}></Route> */
+
+  /* <Route
+            path="/health"
+            element={
+              <Layout1Col
+                titulo="Health"
+                opcao1="HEALTH POLICY"
+                opcao2="GLOBAL HEALTH"
+                opcao3="THE NEW OLD AGE"
+                opcao4="SCIENCE"
+                opcao5="WELL"
+                opcao6="CORONAVIRUS OUTBREAK"
+              />
+            }
+          ></Route> */
+
+  /* <Route path="/" element={<NoticiaAberta />}></Route> */
+
+  /* <Footer /> */
 }
 
 export default App;
