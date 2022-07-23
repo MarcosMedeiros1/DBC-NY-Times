@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
 import Home from "./pages/Home/Home";
+
 import BotoesHeader from "./components/BotoesHeader/BotoesHeader";
 import Layout2Col from "./pages/Layout2/Layout2Col";
 import Layout3Col from "./pages/Layout3/Layout3Col";
@@ -10,15 +11,8 @@ import Layout1Col from "./pages/Layout1/Layout1Col";
 import Layout4 from "./pages/Layout4/Layout4";
 import NoticiaAberta from "./pages/NoticiaAberta/NoticiaAberta";
 
-
 function App() {
-<<<<<<< HEAD
-  const [noticia, setNoticia] = useState({});
-
-
-=======
   const [noticias, setNoticia] = useState([]);
->>>>>>> 5073402b3cc4c3c46d7f8123951d8433c8012ae0
   const key = "lJ6gYehzzdeNq5HGGB5WrW5SmkHtB5dY";
   const setup = async () => {
     try {
@@ -39,8 +33,8 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-<<<<<<< HEAD
-          {/*   <Route path="/" element={<Home />}></Route> */}
+          {/* <Home /> */}
+          <Route path="/" element={<Home noticias={noticias} />}></Route>
 
           {/* <Route path="/" element={<Layout2Col titulo="Science" pagina="science"
           opcao1="CLIMATE" 
@@ -80,20 +74,22 @@ function App() {
           opcao7="MIDDLE EAST"
           />}></Route> */}
 
-          <Route path="/" element={<Layout1Col titulo="Healt" 
-          opcao1="HEALTH POLICY" 
-          opcao2="GLOBAL HEALTH" 
-          opcao3="THE NEW OLD AGE"
-          opcao4="SCIENCE"
-          opcao5="WELL"
-          opcao6="CORONAVIRUS OUTBREAK"
-          />}></Route>
+          {/* <Route
+            path="/health"
+            element={
+              <Layout1Col
+                titulo="Health"
+                opcao1="HEALTH POLICY"
+                opcao2="GLOBAL HEALTH"
+                opcao3="THE NEW OLD AGE"
+                opcao4="SCIENCE"
+                opcao5="WELL"
+                opcao6="CORONAVIRUS OUTBREAK"
+              />
+            }
+          ></Route> */}
 
           {/* <Route path="/" element={<NoticiaAberta />}></Route> */}
-          
-=======
-          <Route path="/" element={<Home noticias={noticias} />}></Route>
->>>>>>> 5073402b3cc4c3c46d7f8123951d8433c8012ae0
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>

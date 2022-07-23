@@ -17,7 +17,7 @@
   list-style: none;
 }
 
-.footer svg {
+.footer > a > svg {
   width: 200px;
 }
 
