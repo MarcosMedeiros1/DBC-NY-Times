@@ -8,6 +8,7 @@ import Layout2Col from "./pages/Layout2/Layout2Col";
 import Layout3Col from "./pages/Layout3/Layout3Col";
 import Layout1Col from "./pages/Layout1/Layout1Col";
 import Layout4 from "./pages/Layout4/Layout4";
+import NoticiaAberta from "./pages/NoticiaAberta/NoticiaAberta";
 
 
 function App() {
@@ -74,15 +75,16 @@ function App() {
           opcao7="MIDDLE EAST"
           />}></Route> */}
 
-          {/* <Route path="/" element={<Layout1Col titulo="Healt" 
+          <Route path="/" element={<Layout1Col titulo="Healt" 
           opcao1="HEALTH POLICY" 
           opcao2="GLOBAL HEALTH" 
           opcao3="THE NEW OLD AGE"
           opcao4="SCIENCE"
           opcao5="WELL"
           opcao6="CORONAVIRUS OUTBREAK"
-          />}></Route> */}
-        
+          />}></Route>
+
+          {/* <Route path="/" element={<NoticiaAberta />}></Route> */}
           
         </Routes>
         {/* <Footer /> */}

@@ -1,0 +1,28 @@
+.noticiaRecebida{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.noticiaRecebida h1{
+    width: 600px;
+    margin: 50px auto 0 auto;
+    font-size: 36px;
+    line-height: 40px;
+}
+
+.noticiaRecebida p{
+    width: 600px;
+    font-size: 20px;
+    line-height: 28px;
+    margin: 15px auto 30px auto;
+    padding-bottom: 30px;
+    border-bottom: 2px solid hsla(0,0%,87.46%,1);
+}
+
+.noticiaRecebida img {
+    margin: 30px auto;
+    width: 950px;
+}
