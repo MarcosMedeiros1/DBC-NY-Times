@@ -72,15 +72,20 @@
 
 }
 
-.cardNoticia:nth-child(2) {
-    border-left: 1px solid hsla(0, 0%, 87.46%, 1);
-    border-right: 1px solid hsla(0, 0%, 87.46%, 1);
+.cardNoticia {
+    position: relative;
 }
 
-.noticiaPrincipal small, .cardNoticia small {
-    display: grid !important;
-    justify-items: end !important;
-    font-size: 10px;
-    color: #999;
-    font-family: Arial, Helvetica, sans-serif;
+.cardNoticia::before {
+    content: "";
+    height: 100%;
+    position: absolute;
+    left: -0.89rem;
+    top: calc(-0.1rem + 2px);
+    border-left: 1px solid #c7c7c7;
+}
+
+.cardNoticia:nth-child(1)::before{
+    border: none;
+    height: 0;
 }
