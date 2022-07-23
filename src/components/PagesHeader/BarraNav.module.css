@@ -1,0 +1,12 @@
+.barraNav nav ul li {
+    display: inline;
+    font-size: 11px;
+    padding-right: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    cursor: pointer;
+}
+
+.borderNav {
+    border-right: 1px solid #f4f4f4;
+}
+

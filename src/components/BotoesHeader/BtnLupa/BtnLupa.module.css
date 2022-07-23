@@ -1,0 +1,13 @@
+.btnLupa button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 14px;   
+    padding: 8px 9px;
+    border-radius: 4px; 
+}
+
+.btnLupa button:hover {
+    background-color: #f7f7f7;
+}
