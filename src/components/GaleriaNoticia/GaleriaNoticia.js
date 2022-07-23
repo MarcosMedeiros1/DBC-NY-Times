@@ -3,21 +3,8 @@ import { useEffect, useState } from "react";
 
 import style from "./GaleriaNoticia.module.css"
 
-function GaleriaNoticia() {
+function GaleriaNoticia({noticias}) {
 
-  const [noticias, setNoticias] = useState([]);
-  async function setup() {
-    try {
-      const { data } = await axios.get('https://api.nytimes.com/svc/topstories/v2/sports.json?api-key=VatkRjA6ApoASKQO1Vt3NPQcGH9o2gZ0')
-      setNoticias(data.results)
-    } catch (error) {
-      console.log(error);
-    }
-  }
-
-  useEffect(() => {
-    setup()
-  }, [])
 
   const noticiaFiltradaGaleria1 = noticias.filter((noticia, index) => {
     return index >= 6 && index <= 10;

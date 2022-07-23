@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Home from "./pages/Home/Home";
 
-import BotoesHeader from "./components/BotoesHeader/BotoesHeader";
 import Layout2Col from "./pages/Layout2/Layout2Col";
 import Layout3Col from "./pages/Layout3/Layout3Col";
 import Layout1Col from "./pages/Layout1/Layout1Col";

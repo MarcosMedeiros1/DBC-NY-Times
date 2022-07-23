@@ -1,4 +1,5 @@
 import axios from "axios";
+import moment from "moment";
 import { useEffect, useState } from "react";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import style from "./Layout4.module.css";
@@ -36,15 +37,19 @@ function Layout4({ titulo, pagina, opcoes }) {
         <section className={style.displayGrid}>
           <div>
             {noticiasPrincipal.map(
-              ({ title, abstract, byline, multimedia }, i) => (
+              ({ title, abstract, byline, multimedia, published_date }, i) => (
                 <div className={style.layoutPrincipal} key={i}>
                   <div>
                     <h1>{title ? title : "Has no title"}</h1>
                     <p>{abstract ? abstract : "Has no description"}</p>
-                    <span>{byline ? byline : "Has no copyright"}</span>
+                    <span>
+                      {moment(published_date).format("hh:mm")}h -{" "}
+                      {byline ? byline : "Has no copyright"}
+                    </span>
                   </div>
                   <div>
                     <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                    <small>{multimedia ? multimedia[1].copyright : "."}</small>
                   </div>
                 </div>
               ),
@@ -52,22 +57,29 @@ function Layout4({ titulo, pagina, opcoes }) {
           </div>
 
           <div className={style.columnNoticias}>
-            {noticiasAside.map(({ title, abstract, byline, multimedia }, i) => (
-              <aside className={style.asideLayout4} key={i}>
-                <div>
-                  <h2>{title ? title : "Has no title"}</h2>
-                </div>
-                <div className={`${style.displayFlex} ${style.flexDirection}`}>
+            {noticiasAside.map(
+              ({ title, abstract, byline, multimedia, published_date }, i) => (
+                <aside className={style.asideLayout4} key={i}>
                   <div>
-                    <p>{abstract ? abstract : "Has no description"}</p>
-                    <span>{byline ? byline : "Has no copyright"}</span>
+                    <h2>{title ? title : "Has no title"}</h2>
                   </div>
-                  <div>
-                    <img src={multimedia ? multimedia[2].url : "./"} alt="" />
+                  <div
+                    className={`${style.displayFlex} ${style.flexDirection}`}
+                  >
+                    <div>
+                      <p>{abstract ? abstract : "Has no description"}</p>
+                      <span>
+                        {moment(published_date).format("hh:mm")}h -{" "}
+                        {byline ? byline : "Has no copyright"}
+                      </span>
+                    </div>
+                    <div>
+                      <img src={multimedia ? multimedia[2].url : "./"} alt="" />
+                    </div>
                   </div>
-                </div>
-              </aside>
-            ))}
+                </aside>
+              ),
+            )}
           </div>
         </section>
       </div>

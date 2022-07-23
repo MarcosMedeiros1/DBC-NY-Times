@@ -1,4 +1,5 @@
 import axios from "axios";
+import moment from "moment";
 import { useEffect, useState } from "react";
 import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
@@ -36,32 +37,34 @@ function Layout2Col({ titulo, pagina, opcoes }) {
       <div className="container">
         <section className={style.displayGrid}>
           {noticiasPrincipal.map(
-            ({ title, abstract, byline, multimedia }, i) => (
+            ({ title, abstract, byline, multimedia, published_date }, i) => (
               <div className={style.layoutPrincipal} key={i}>
                 <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                <small>{multimedia ? multimedia[1].copyright : "."}</small>
                 <div>
                   <h1>{title ? title : "Has no title"}</h1>
                   <p>{abstract ? abstract : "Has no description"}</p>
-                  <p>{byline ? byline : "Has no copyright"}</p>
+                  <p>{moment(published_date).format("hh:mm")}h - {byline ? byline : "Has no copyright"}</p>
                 </div>
               </div>
             ),
           )}
           <div className={style.columnNoticias}>
-            {noticiasAside.map(({ title, abstract, byline, multimedia }, i) => (
+            {noticiasAside.map(({ title, abstract, byline, multimedia, published_date }, i) => (
               <aside className={style.asideLayout2} key={i}>
                 <div>
                   <h2>{title ? title : "Has no title"}</h2>
                   <img src={multimedia ? multimedia[2].url : "./"} alt="" />
+                  
                 </div>
                 <p>{abstract ? abstract : "Has no description"}</p>
-                <p>{byline ? byline : "Has no copyright"}</p>
+                <p>{moment(published_date).format("hh:mm")}h - {byline ? byline : "Has no copyright"}</p>
               </aside>
             ))}
           </div>
         </section>
       </div>
-      <GaleriaNoticia />
+      <GaleriaNoticia noticias={noticias} />
     </div>
   );
 }
