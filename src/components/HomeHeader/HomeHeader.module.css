@@ -35,9 +35,9 @@
 
 .homeHeader > div:first-child > div:nth-child(2) > button {
   font-size: 10px;
-  transition: 0.6s;
   padding: 6px 8px;
   border-radius: 4px;
+  transition: 0.6s;
 }
 
 .homeHeader > div:first-child > div:nth-child(2) > button:hover {
@@ -70,23 +70,81 @@
   justify-content: space-between;
   align-items: center;
   padding-bottom: 4px;
-  border-bottom: 1px solid #ebebeb;
-}
-
-.homeHeader > div:nth-child(2) > div:first-child {
-  display: grid;
-  justify-content: space-between;
 }
 
 .homeHeader > div:nth-child(2) small {
   font-size: 12px;
 }
 
-.homeHeader > div:nth-child(2) > div:last-child {
+/* Data */
+.homeHeader > div:nth-child(2) > div:first-child {
   display: grid;
+  justify-content: space-between;
 }
 
-.homeHeader > div:nth-child(2) > svg {
+/* Clima */
+.homeHeader > div:nth-child(2) > div:last-child {
+  display: grid;
+  gap: 6px;
+}
+
+.homeHeader > div:nth-child(2) > div:last-child > small {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.homeHeader > div:nth-child(2) > div:last-child div > span {
+  font-size: 11px;
+}
+
+.homeHeader > div:nth-child(2) > div:last-child div > span:last-child {
+  color: rgb(153, 153, 153);
+}
+
+.homeHeader > div:nth-child(2) > div:last-child > small:last-child {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.homeHeader > div:nth-child(2) > div:last-child > small:last-child > span {
+  color: #3f893b;
+}
+
+.homeHeader > div:nth-child(2) > a > svg {
   width: 430px;
   height: 58.4px;
+}
+
+.homeHeader > nav > ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 4px 0 8px;
+
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #000;
+}
+
+.homeHeader > nav::after {
+  content: "";
+  height: 2.5px;
+  border-bottom: 1px solid #000;
+  display: block;
+}
+
+.homeHeader > nav > ul > li > a {
+  color: #000;
+  text-decoration: none;
+  font-size: 12px;
+  transition: 0.6s;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.homeHeader > nav > ul > li > a:hover {
+  background-color: #f7f7f7;
 }

@@ -12,16 +12,20 @@ import NoticiaAberta from "./pages/NoticiaAberta/NoticiaAberta";
 
 
 function App() {
+<<<<<<< HEAD
   const [noticia, setNoticia] = useState({});
 
 
+=======
+  const [noticias, setNoticia] = useState([]);
+>>>>>>> 5073402b3cc4c3c46d7f8123951d8433c8012ae0
   const key = "lJ6gYehzzdeNq5HGGB5WrW5SmkHtB5dY";
   const setup = async () => {
     try {
       const { data } = await axios.get(
         `https://api.nytimes.com/svc/topstories/v2/home.json?api-key=${key}`,
       );
-      setNoticia(data);
+      setNoticia(data.results);
     } catch (error) {
       console.log(error);
     }
@@ -35,6 +39,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
+<<<<<<< HEAD
           {/*   <Route path="/" element={<Home />}></Route> */}
 
           {/* <Route path="/" element={<Layout2Col titulo="Science" pagina="science"
@@ -86,6 +91,9 @@ function App() {
 
           {/* <Route path="/" element={<NoticiaAberta />}></Route> */}
           
+=======
+          <Route path="/" element={<Home noticias={noticias} />}></Route>
+>>>>>>> 5073402b3cc4c3c46d7f8123951d8433c8012ae0
         </Routes>
         {/* <Footer /> */}
       </BrowserRouter>

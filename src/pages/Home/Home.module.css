@@ -1,5 +1,15 @@
-.home {
+.home > section {
+  font-family: Helvetica, Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.homeMain {
   display: grid;
   justify-content: center;
-  grid-template-columns: 1200px;
+  grid-template-columns: 3fr 1fr;
+  gap: 32px;
 }

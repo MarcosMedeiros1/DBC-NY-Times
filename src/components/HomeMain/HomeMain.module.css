@@ -1,0 +1,50 @@
+main {
+  display: grid;
+  align-content: start;
+  border-top: 1px solid #000;
+}
+
+main img {
+  width: 100%;
+}
+
+main h1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+main p {
+  font-size: 14px;
+  color: #5a5a5a;
+  position: relative;
+}
+
+main p::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  border-radius: 100%;
+  left: -8px;
+  top: 6.5px;
+  background: #727272;
+  position: absolute;
+}
+
+main > div {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  border-bottom: 1px solid #000;
+  padding: 24px 0 24px;
+}
+
+main > div > div:first-child {
+  padding-right: 16px;
+}
+
+main > div > div:last-child {
+  display: grid;
+  justify-items: end;
+  gap: 4px;
+  font-size: 12px;
+  color: #727272;
+}
