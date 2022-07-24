@@ -25,13 +25,15 @@
   line-height: 20px;
 }
 
-.primaria p:nth-child(3) {
-  color: #999;
+:is(.primaria, .secundaria, .aside) span {
+  color: #727272;
+  font-size: 12px;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
-.secundaria {
-  width: 305px;
-  height: 580px;
+:is(.primaria, .secundaria) > div:first-child {
+  display: grid;
+  justify-items: end;
 }
 
 .secundaria h1 {
@@ -49,14 +51,37 @@
   color: #999;
 }
 
-.aside {
-  display: grid;
-  gap: 20px;
+.primaria {
+  position: relative;
+}
+
+.primaria::before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  left: calc(60rem + 6px);
+  border-left: 1px solid #dfdfef;
+}
+
+.primaria::after {
+  content: "";
+  height: 100%;
+  position: absolute;
+  right: calc(-0.85rem);
+  border-left: 1px solid #dfdfef;
 }
 
 .aside > div:first-child {
   padding-bottom: 20px;
   border-bottom: 1px solid #dfdfef;
+}
+
+.aside > div > div > p {
+  margin: 14px 0 0;
+}
+
+.aside > div:last-child > div:last-child > h1 {
+  margin-top: 16px;
 }
 
 .aside h1 {

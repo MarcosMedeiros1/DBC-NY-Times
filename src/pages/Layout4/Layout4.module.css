@@ -85,10 +85,7 @@
 
 .asideLayout4 > div {
   display: flex;
-}
-
-.asideLayout4 p:nth-child(1) {
-  padding-right: 15px;
+  gap: 10px;
 }
 
 .asideLayout4 span {

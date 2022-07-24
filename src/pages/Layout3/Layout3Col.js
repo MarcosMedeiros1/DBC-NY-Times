@@ -39,42 +39,62 @@ function LayoutCol3({ titulo, pagina, opcoes }) {
           {noticiaPrincipal.map(
             ({ title, abstract, byline, multimedia, published_date }, i) => (
               <div className={style.primaria} key={i}>
-                <img src={multimedia ? multimedia[1].url : "./"} alt="" />
-                <small>{multimedia ? multimedia[1].copyright : "."}</small>
+                <div>
+                  <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                  <span>{multimedia ? multimedia[1].copyright : "."}</span>
+                </div>
                 <div>
                   <h1>{title ? title : "Has no title"}</h1>
                   <p>{abstract ? abstract : "Has no description"}</p>
-                  <p>{moment(published_date).format("hh:mm")}h - {byline ? byline : "Has no copyright"}</p>
+                  <span>
+                    {moment(published_date).format("hh:mm")}h -{" "}
+                    {byline ? byline : "Has no copyright"}
+                  </span>
                 </div>
               </div>
             ),
           )}
 
-          {noticiaSecundaria.map(
-            ({ title, abstract, byline, multimedia, published_date }, i) => (
-              <div className={style.secundaria} key={i}>
-                <img src={multimedia ? multimedia[1].url : "./"} alt="" />
-                <small>{multimedia ? multimedia[1].copyright : "."}</small>
-                <div>
-                  <h1>{title ? title : "Has no title"}</h1>
-                  <p>{abstract ? abstract : "Has no description"}</p>
-                  <p>{moment(published_date).format("hh:mm")}h - {byline ? byline : "Has no copyright"}</p>
+          <div className={style.secundaria}>
+            {noticiaSecundaria.map(
+              ({ title, abstract, byline, multimedia, published_date }, i) => (
+                <div key={i}>
+                  <div>
+                    <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                    <span>{multimedia ? multimedia[1].copyright : "."}</span>
+                  </div>
+                  <div>
+                    <h1>{title ? title : "Has no title"}</h1>
+                    <p>{abstract ? abstract : "Has no description"}</p>
+                    <span>
+                      {moment(published_date).format("hh:mm")}h -{" "}
+                      {byline ? byline : "Has no copyright"}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ),
-          )}
-          <div>
-            {noticiaAside.map(({ title, abstract, byline, multimedia, published_date }, i) => (
-              <div className={style.aside} key={i}>
-                <div>
-                  <h1>{title ? title : "Has no title"}</h1>
-                  <img src={multimedia ? multimedia[1].url : "./"} alt="" />
-                  
-                  <p>{abstract ? abstract : "Has no description"}</p>
-                  <p>{moment(published_date).format("hh:mm")}h - {byline ? byline : "Has no copyright"}</p>
+              ),
+            )}
+          </div>
+
+          <div className={style.aside}>
+            {noticiaAside.map(
+              ({ title, abstract, byline, multimedia, published_date }, i) => (
+                <div key={i}>
+                  <div>
+                    <h1>{title ? title : "Has no title"}</h1>
+
+                    <p>
+                      <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                      {abstract ? abstract : "Has no description"}
+                    </p>
+                    <span>
+                      {moment(published_date).format("hh:mm")}h -{" "}
+                      {byline ? byline : "Has no copyright"}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ),
+            )}
           </div>
         </section>
       </div>
