@@ -20,6 +20,12 @@
   margin-top: 20px;
 }
 
+.primaria h1:hover,
+.secundaria h1:hover,
+.aside h1:hover {
+  text-decoration: underline;
+}
+
 .primaria p {
   margin-top: 10px;
   line-height: 20px;

@@ -20,6 +20,10 @@
   font-size: 18px;
 }
 
+.homeAside h1:hover {
+  text-decoration: underline;
+}
+
 .homeAside > div {
   display: grid;
   gap: 8px;

@@ -1,8 +1,6 @@
 import styles from "./HomeMain.module.css";
-import moment from "moment";
 
 const HomeMain = ({ noticias }) => {
-  console.log(noticias);
   const noticiasFilter = noticias.filter((noticia, index) => {
     return index % 2;
   });

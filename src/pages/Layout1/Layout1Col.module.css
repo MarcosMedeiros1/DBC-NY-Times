@@ -24,6 +24,11 @@
   font-weight: 200;
 }
 
+.noticiaPrincipal h1:hover,
+.cardNoticia h2:hover {
+  text-decoration: underline;
+}
+
 .noticiaPrincipal p {
   font-size: 16px;
   line-height: 22px;

@@ -1,40 +1,36 @@
-.displayflex {
-  display: flex;
-  margin-top: 20px;
-  gap: 20px;
+.displayGrid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  padding: 32px 0;
+  align-items: start;
+  gap: 40px;
   border-bottom: 2px solid black;
-  margin-bottom: 15px;
 }
 
-.galeriaNoticia {
-  width: 240px;
-  display: flex;
-  justify-content: center;
-  padding: 20px 0;
-  margin-bottom: 25px;
+.galeriaNoticia > div {
+  display: grid;
+  gap: 12px;
 }
 
 .galeriaNoticia img {
   width: 100%;
-  margin-top: -20px;
 }
 
-.galeriaNoticia a {
-  font-size: 16px;
-  line-height: 25px;
-  text-align: justify;
+.galeriaNoticia span:hover {
+  text-decoration: underline;
 }
 
 .galeriaNoticia {
   position: relative;
+  height: 280px;
 }
 
 .galeriaNoticia::before {
   content: "";
   height: 100%;
   position: absolute;
-  left: -0.65rem;
-  top: calc(-0.1rem + 2px);
+  left: -1.3rem;
+  top: calc(-0.1rem + 1.5px);
   border-left: 1px solid #c7c7c7;
 }
 

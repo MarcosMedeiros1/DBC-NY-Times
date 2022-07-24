@@ -13,6 +13,10 @@ main h1 {
   margin-bottom: 10px;
 }
 
+main h1:hover {
+  text-decoration: underline;
+}
+
 main p {
   font-size: 14px;
   color: #5a5a5a;

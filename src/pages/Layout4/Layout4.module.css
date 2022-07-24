@@ -41,6 +41,11 @@
   font-size: 20px;
 }
 
+.layoutPrincipal h1:hover,
+.asideLayout4 h2:hover {
+  text-decoration: underline;
+}
+
 .layoutPrincipal p:nth-child(2) {
   font-size: 15px;
   line-height: 22px;

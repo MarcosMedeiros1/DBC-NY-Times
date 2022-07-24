@@ -10,23 +10,23 @@ function GaleriaNoticia({ noticias }) {
 
   return (
     <div className="container">
-      <section className={style.displayflex}>
+      <section className={style.displayGrid}>
         {noticiaFiltradaGaleria1.map(({ title, multimedia }, i) => (
           <div className={style.galeriaNoticia} key={i}>
             <div>
               <img src={multimedia ? multimedia[2].url : "./"} alt="" />
-              <a>{title ? title : "Has no title"}</a>
+              <span>{title ? title : "Has no title"}</span>
             </div>
           </div>
         ))}
       </section>
 
-      <section className={style.displayflex}>
+      <section className={style.displayGrid}>
         {noticiaFiltradaGaleria2.map(({ title, multimedia }, i) => (
           <div className={style.galeriaNoticia} key={i}>
             <div>
               <img src={multimedia ? multimedia[2].url : "./"} alt="" />
-              <a>{title ? title : "Has no title"}</a>
+              <span>{title ? title : "Has no title"}</span>
             </div>
           </div>
         ))}

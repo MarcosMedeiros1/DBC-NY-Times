@@ -16,8 +16,13 @@
 }
 
 .layoutPrincipal h1 {
-  font-size: 20px;
-  margin-top: 25px;
+  font-size: 24px;
+  margin-top: 24px;
+}
+
+.layoutPrincipal h1:hover,
+.asideLayout2 h2:hover {
+  text-decoration: underline;
 }
 
 .layoutPrincipal p:nth-child(2) {
