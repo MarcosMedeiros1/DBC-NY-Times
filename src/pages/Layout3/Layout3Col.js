@@ -2,6 +2,7 @@ import axios from "axios";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
+import HomeFooter from "../../components/HomeFooter/HomeFooter";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import style from "./Layout3Col.module.css";
 
@@ -98,7 +99,8 @@ function LayoutCol3({ titulo, pagina, opcoes }) {
           </div>
         </section>
       </div>
-      {<GaleriaNoticia noticias={noticias} />}
+      <GaleriaNoticia noticias={noticias} />
+      <HomeFooter />
     </div>
   );
 }

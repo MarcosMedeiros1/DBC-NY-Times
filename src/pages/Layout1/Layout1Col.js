@@ -2,6 +2,7 @@ import axios from "axios";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
+import HomeFooter from "../../components/HomeFooter/HomeFooter";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import style from "./Layout1Col.module.css";
 
@@ -33,8 +34,8 @@ function Layout1Col({ titulo, opcoes }) {
 
   return (
     <div className="container">
+      <PagesHeader titulo={titulo} opcoes={opcoes} />
       <div className={style.health}>
-        <PagesHeader titulo={titulo} opcoes={opcoes} />
         <section>
           {noticiaFiltrada.map(
             ({ title, abstract, byline, multimedia, published_date }, i) => (
@@ -80,6 +81,7 @@ function Layout1Col({ titulo, opcoes }) {
         </section>
       </div>
       <GaleriaNoticia noticias={noticias} />
+      <HomeFooter />
     </div>
   );
 }

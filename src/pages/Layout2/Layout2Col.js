@@ -2,6 +2,7 @@ import axios from "axios";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
+import HomeFooter from "../../components/HomeFooter/HomeFooter";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import style from "./Layout2Col.module.css";
 
@@ -44,27 +45,35 @@ function Layout2Col({ titulo, pagina, opcoes }) {
                 <div>
                   <h1>{title ? title : "Has no title"}</h1>
                   <p>{abstract ? abstract : "Has no description"}</p>
-                  <p>{moment(published_date).format("hh:mm")}h - {byline ? byline : "Has no copyright"}</p>
+                  <p>
+                    {moment(published_date).format("hh:mm")}h -{" "}
+                    {byline ? byline : "Has no copyright"}
+                  </p>
                 </div>
               </div>
             ),
           )}
           <div className={style.columnNoticias}>
-            {noticiasAside.map(({ title, abstract, byline, multimedia, published_date }, i) => (
-              <aside className={style.asideLayout2} key={i}>
-                <div>
-                  <h2>{title ? title : "Has no title"}</h2>
-                  <img src={multimedia ? multimedia[2].url : "./"} alt="" />
-                  
-                </div>
-                <p>{abstract ? abstract : "Has no description"}</p>
-                <p>{moment(published_date).format("hh:mm")}h - {byline ? byline : "Has no copyright"}</p>
-              </aside>
-            ))}
+            {noticiasAside.map(
+              ({ title, abstract, byline, multimedia, published_date }, i) => (
+                <aside className={style.asideLayout2} key={i}>
+                  <div>
+                    <h2>{title ? title : "Has no title"}</h2>
+                    <img src={multimedia ? multimedia[2].url : "./"} alt="" />
+                  </div>
+                  <p>{abstract ? abstract : "Has no description"}</p>
+                  <p>
+                    {moment(published_date).format("hh:mm")}h -{" "}
+                    {byline ? byline : "Has no copyright"}
+                  </p>
+                </aside>
+              ),
+            )}
           </div>
         </section>
       </div>
       <GaleriaNoticia noticias={noticias} />
+      <HomeFooter />
     </div>
   );
 }

@@ -2,8 +2,14 @@
   display: grid;
   grid-template-columns: 1fr 3fr;
   margin-top: 20px;
-  padding-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #c7c7c7;
   gap: 32px;
+}
+
+.health {
+  display: grid;
+  gap: 20px;
 }
 
 .health span {
@@ -39,11 +45,8 @@
 }
 
 .cardNoticia {
-  width: 390px;
-  margin: 20px 0;
   display: grid;
-  align-items: center;
-  padding: 25px 0;
+  margin-bottom: 30px;
 }
 
 .displayflex {
@@ -53,7 +56,6 @@
 .noticiaPrincipal > div:last-child,
 .cardNoticia > div:first-child {
   display: grid;
-  align-content: start;
   justify-items: end;
 }
 
@@ -73,11 +75,20 @@
   line-height: 20px;
 }
 
-.cardNoticia p:nth-child(3) {
-  color: #999;
+.cardNoticia {
+  position: relative;
 }
 
-.cardNoticia:nth-child(2) {
-  border-left: 1px solid hsla(0, 0%, 87.46%, 1);
-  border-right: 1px solid hsla(0, 0%, 87.46%, 1);
+.cardNoticia::before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  left: -0.8rem;
+  top: calc(-0.1rem + 2px);
+  border-left: 1px solid #c7c7c7;
+}
+
+.cardNoticia:nth-child(1)::before {
+  border: none;
+  height: 0;
 }
