@@ -2,7 +2,6 @@ import axios from "axios";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
-import HomeFooter from "../../components/HomeFooter/HomeFooter";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import style from "./Layout2Col.module.css";
 
@@ -34,46 +33,47 @@ function Layout2Col({ titulo, pagina, opcoes }) {
   return (
     <div>
       <PagesHeader titulo={titulo} opcoes={opcoes} />
-
       <div className="container">
         <section className={style.displayGrid}>
           {noticiasPrincipal.map(
             ({ title, abstract, byline, multimedia, published_date }, i) => (
               <div className={style.layoutPrincipal} key={i}>
-                <img src={multimedia ? multimedia[1].url : "./"} alt="" />
-                <small>{multimedia ? multimedia[1].copyright : "."}</small>
+                <div>
+                  <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                  <span>{multimedia ? multimedia[1].copyright : "."}</span>
+                </div>
                 <div>
                   <h1>{title ? title : "Has no title"}</h1>
                   <p>{abstract ? abstract : "Has no description"}</p>
-                  <p>
+                  <span>
                     {moment(published_date).format("hh:mm")}h -{" "}
                     {byline ? byline : "Has no copyright"}
-                  </p>
+                  </span>
                 </div>
               </div>
             ),
           )}
-          <div className={style.columnNoticias}>
+
+          <aside className={style.columnNoticias}>
             {noticiasAside.map(
               ({ title, abstract, byline, multimedia, published_date }, i) => (
-                <aside className={style.asideLayout2} key={i}>
+                <div className={style.asideLayout2} key={i}>
                   <div>
                     <h2>{title ? title : "Has no title"}</h2>
                     <img src={multimedia ? multimedia[2].url : "./"} alt="" />
                   </div>
                   <p>{abstract ? abstract : "Has no description"}</p>
-                  <p>
+                  <span>
                     {moment(published_date).format("hh:mm")}h -{" "}
                     {byline ? byline : "Has no copyright"}
-                  </p>
-                </aside>
+                  </span>
+                </div>
               ),
             )}
-          </div>
+          </aside>
         </section>
       </div>
       <GaleriaNoticia noticias={noticias} />
-      <HomeFooter />
     </div>
   );
 }

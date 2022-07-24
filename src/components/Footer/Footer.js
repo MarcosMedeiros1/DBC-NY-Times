@@ -1,9 +1,9 @@
 import { FaNewspaper, FaGamepad } from "react-icons/fa";
 import { SiNewyorktimes } from "react-icons/si";
 import { GiKnifeFork } from "react-icons/gi";
-import styles from "./HomeFooter.module.css";
+import styles from "./Footer.module.css";
 
-const HomeFooter = () => {
+const Footer = () => {
   return (
     <footer className={styles.footer}>
       <a href="./">
@@ -374,4 +374,4 @@ const HomeFooter = () => {
     </footer>
   );
 };
-export default HomeFooter;
+export default Footer;

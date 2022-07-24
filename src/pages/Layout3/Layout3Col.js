@@ -2,7 +2,6 @@ import axios from "axios";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
-import HomeFooter from "../../components/HomeFooter/HomeFooter";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import style from "./Layout3Col.module.css";
 
@@ -23,10 +22,10 @@ function LayoutCol3({ titulo, pagina, opcoes }) {
   }, []);
 
   const noticiaPrincipal = noticias.filter((noticia, index) => {
-    return index === 3;
+    return index === 2;
   });
   const noticiaSecundaria = noticias.filter((noticia, index) => {
-    return index === 4;
+    return index === 3;
   });
   const noticiaAside = noticias.filter((noticia, index) => {
     return index >= 5 && index <= 6;
@@ -100,7 +99,6 @@ function LayoutCol3({ titulo, pagina, opcoes }) {
         </section>
       </div>
       <GaleriaNoticia noticias={noticias} />
-      <HomeFooter />
     </div>
   );
 }

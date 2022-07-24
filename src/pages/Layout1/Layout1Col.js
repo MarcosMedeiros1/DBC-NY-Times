@@ -2,7 +2,6 @@ import axios from "axios";
 import moment from "moment";
 import { useEffect, useState } from "react";
 import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
-import HomeFooter from "../../components/HomeFooter/HomeFooter";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import style from "./Layout1Col.module.css";
 
@@ -59,7 +58,7 @@ function Layout1Col({ titulo, opcoes }) {
           )}
         </section>
 
-        <section className={style.displayflex}>
+        <section className={style.displayGrid}>
           {noticiaQtd3.map(
             ({ title, abstract, byline, multimedia, published_date }, i) => (
               <div className={style.cardNoticia} key={i}>
@@ -81,7 +80,6 @@ function Layout1Col({ titulo, opcoes }) {
         </section>
       </div>
       <GaleriaNoticia noticias={noticias} />
-      <HomeFooter />
     </div>
   );
 }

@@ -8,7 +8,8 @@ import Layout2Col from "./pages/Layout2/Layout2Col";
 import Layout3Col from "./pages/Layout3/Layout3Col";
 import Layout1Col from "./pages/Layout1/Layout1Col";
 import Layout4 from "./pages/Layout4/Layout4";
-import NoticiaAberta from "./pages/NoticiaAberta/NoticiaAberta";
+import Footer from "./components/Footer/Footer";
+// import NoticiaAberta from "./pages/NoticiaAberta/NoticiaAberta";
 
 function App() {
   const [noticias, setNoticia] = useState([]);
@@ -123,6 +124,7 @@ function App() {
           ></Route>
         </Routes>
       </BrowserRouter>
+      <Footer />
     </>
   );
 }

@@ -1,89 +1,80 @@
 .displayGrid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    margin-top: 30px;
-    padding-bottom: 60px;
-    border-bottom: 1px solid hsla(0, 0%, 87.46%, 1);
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin-top: 30px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid hsla(0, 0%, 87.46%, 1);
 }
 
 .layoutPrincipal {
-    max-width: 840px;
-    text-align: center;
+  text-align: center;
 }
 
-.layoutPrincipal>div {
-    width: 540px;
-    margin: 0 auto;
+.layoutPrincipal > div:first-child {
+  text-align: right;
 }
 
 .layoutPrincipal h1 {
-    font-size: 20px;
-    margin-top: 25px;
+  font-size: 20px;
+  margin-top: 25px;
 }
 
 .layoutPrincipal p:nth-child(2) {
-    font-size: 15px;
-    line-height: 20px;
-    margin-top: 10px;
+  font-size: 15px;
+  line-height: 20px;
+  margin-top: 10px;
 }
 
-.layoutPrincipal p:nth-child(3) {
-    font-size: 15px;
-    color: #727272;
+.layoutPrincipal span,
+.columnNoticias span {
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 12px;
+  color: #727272;
 }
 
 .layoutPrincipal img {
-    width: 100%;
+  width: 100%;
+}
+
+.layoutPrincipal::before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  right: 35.4rem;
+  border-left: 1px solid #dfdfef;
 }
 
 .columnNoticias {
-    height: 710px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-end;
+  display: grid;
+  gap: 20px;
+  align-content: start;
 }
 
-.asideLayout2 {
-    width: 340px;
+.columnNoticias > div {
+  padding-bottom: 16px;
 }
 
 .asideLayout2:nth-child(1),
 .asideLayout2:nth-child(2) {
-    border-bottom: 1px solid hsla(0, 0%, 87.46%, 1);
-}
-
-.asideLayout2:nth-child(2) {
-    margin-bottom: 20px;
+  border-bottom: 1px solid hsla(0, 0%, 87.46%, 1);
 }
 
 .asideLayout2 h2 {
-    font-size: 20px;
-    padding-right: 15px;
+  font-size: 20px;
 }
 
 .asideLayout2 p:nth-child(2) {
-    font-size: 15px;
-    line-height: 20px;
-}
-
-.asideLayout2 p:nth-child(3) {
-    font-size: 15px;
-    color: #727272;
+  font-size: 15px;
+  line-height: 20px;
 }
 
 .asideLayout2 img {
-    height: 75px;
+  width: 20%;
 }
 
-.asideLayout2>div {
-    display: flex;
-}
-
-.layoutAnexoPrinc small {
-    display: grid !important;
-    justify-items: end !important;
-    font-size: 10px;
-    color: #999;
-    font-family: Arial, Helvetica, sans-serif;
+.asideLayout2 > div:first-child {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 12px;
 }

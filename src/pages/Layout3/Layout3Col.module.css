@@ -31,7 +31,8 @@
   font-family: Helvetica, Arial, sans-serif;
 }
 
-:is(.primaria, .secundaria) > div:first-child {
+.primaria > div:first-child,
+.secundaria > div > div:first-child {
   display: grid;
   justify-items: end;
 }

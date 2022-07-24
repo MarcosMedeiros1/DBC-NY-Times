@@ -1,5 +1,5 @@
 import HomeAside from "../../components/HomeAside/HomeAside";
-import HomeFooter from "../../components/HomeFooter/HomeFooter";
+import HomeFooter from "../../components/Footer/Footer";
 import HomeHeader from "../../components/HomeHeader/HomeHeader";
 import HomeMain from "../../components/HomeMain/HomeMain";
 import Live from "../../components/live/Live";
@@ -14,7 +14,6 @@ const Home = ({ noticias }) => {
         <HomeMain noticias={noticias} />
         <HomeAside noticias={noticias} />
       </div>
-      <HomeFooter />
     </div>
   );
 };

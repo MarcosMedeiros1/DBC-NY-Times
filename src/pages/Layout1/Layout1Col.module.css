@@ -39,24 +39,26 @@
   align-items: center;
 }
 
-.displayflex {
-  display: flex;
+.displayGrid {
+  display: grid;
+  justify-content: space-between;
+  grid-template-columns: repeat(3, 380px);
   gap: 25px;
 }
 
 .cardNoticia {
   display: grid;
   margin-bottom: 30px;
+  align-content: start;
 }
 
-.displayflex {
+.displayGrid {
   border-bottom: 1px solid hsla(0, 0%, 87.46%, 1);
 }
 
 .noticiaPrincipal > div:last-child,
 .cardNoticia > div:first-child {
-  display: grid;
-  justify-items: end;
+  text-align: right;
 }
 
 .cardNoticia img {
@@ -83,7 +85,7 @@
   content: "";
   height: 100%;
   position: absolute;
-  left: -0.8rem;
+  left: -1rem;
   top: calc(-0.1rem + 2px);
   border-left: 1px solid #c7c7c7;
 }
