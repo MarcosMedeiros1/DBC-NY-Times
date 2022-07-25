@@ -1,10 +1,11 @@
 import axios from "axios";
 import moment from "moment";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import style from "./Layout4.module.css";
 
-function Layout4({ titulo, pagina, opcoes }) {
+function Layout4({ titulo, pagina, opcoes, setTitleClicada, setAbstractClicada, setMultimediaClicada }) {
   const [noticias, setNoticias] = useState([]);
 
   async function setup() {
@@ -29,6 +30,12 @@ function Layout4({ titulo, pagina, opcoes }) {
     return index >= 5 && index <= 6;
   });
 
+  function setValores(title, abstract, multimedia){
+    setTitleClicada(title);
+    setAbstractClicada(abstract);
+    setMultimediaClicada(multimedia);
+  }
+
   return (
     <div>
       <PagesHeader titulo={titulo} opcoes={opcoes} />
@@ -38,20 +45,21 @@ function Layout4({ titulo, pagina, opcoes }) {
           <div>
             {noticiasPrincipal.map(
               ({ title, abstract, byline, multimedia, published_date }, i) => (
-                <div className={style.layoutPrincipal} key={i}>
-                  <div>
-                    <h1>{title ? title : "Has no title"}</h1>
-                    <p>{abstract ? abstract : "Has no description"}</p>
-                    <span>
-                      {moment(published_date).format("hh:mm")}h -{" "}
-                      {byline ? byline : "Has no copyright"}
-                    </span>
-                  </div>
-                  <div>
-                    <img src={multimedia ? multimedia[1].url : "./"} alt="" />
-                    <small>{multimedia ? multimedia[1].copyright : "."}</small>
-                  </div>
-                </div>
+                
+                    <div className={style.layoutPrincipal} key={i}>
+                      <div>
+                        <h1><Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}>{title ? title : "Has no title"}</Link></h1>
+                        <p>{abstract ? abstract : "Has no description"}</p>
+                        <span>
+                          {moment(published_date).format("hh:mm")}h -{" "}
+                          {byline ? byline : "Has no copyright"}
+                        </span>
+                      </div>
+                      <div>
+                        <Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}><img src={multimedia ? multimedia[1].url : "./"} alt="" /></Link>
+                        <small>{multimedia ? multimedia[1].copyright : "."}</small>
+                      </div>
+                    </div>
               ),
             )}
           </div>

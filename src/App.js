@@ -12,6 +12,10 @@ import NoticiaAberta from "./pages/NoticiaAberta/NoticiaAberta";
 
 function App() {
   const [noticias, setNoticia] = useState([]);
+  const [titleClicada, setTitleClicada] = useState([]);
+  const [abstractClicada, setAbstractClicada] = useState([]);
+  const [multimediaClicada, setMultimediaClicada] = useState([]);
+
   const key = "lJ6gYehzzdeNq5HGGB5WrW5SmkHtB5dY";
   const setup = async () => {
     try {
@@ -32,12 +36,16 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home noticias={noticias} />}></Route>
 
-          {/* <Route
+          <Route
             path="/noticia"
-            element={<NoticiaAberta noticia={noticias} />}
-          ></Route> */}
+            element={<NoticiaAberta
+              titleClicada={titleClicada}
+              abstractClicada={abstractClicada}
+              multimediaClicada={multimediaClicada} />}
+          ></Route>
+
+          <Route path="/" element={<Home noticias={noticias} />}></Route>
 
           <Route
             path="/world"
@@ -54,8 +62,12 @@ function App() {
                   "EUROPE",
                   "MIDDLE EAST",
                 ]}
+                setTitleClicada={setTitleClicada}
+                setAbstractClicada={setAbstractClicada}
+                setMultimediaClicada={setMultimediaClicada}
               />
             }
+            
           ></Route>
           <Route
             path="/politics"
@@ -63,7 +75,11 @@ function App() {
               <Layout4
                 titulo="U.S. Politic"
                 pagina="politics"
-                opcoes={["JOE BIDEN", "2022 MIDTERM ELECTIONS"]}
+                opcoes={["JOE BIDEN", "2022 MIDTERM ELECTIONS"]}                
+                setTitleClicada={setTitleClicada}               
+                setAbstractClicada={setAbstractClicada}                
+                setMultimediaClicada={setMultimediaClicada}
+
               />
             }
           ></Route>
@@ -85,6 +101,10 @@ function App() {
                   "YOUR MONEY",
                   "MUTUAL FUNDS AND ETFS",
                 ]}
+                
+                setTitleClicada={setTitleClicada}                
+                setAbstractClicada={setAbstractClicada}               
+                setMultimediaClicada={setMultimediaClicada}
               />
             }
           ></Route>
@@ -103,6 +123,9 @@ function App() {
                   "OUTTHERE",
                   "CORONAVIRUS OUTBREAK",
                 ]}
+                setTitleClicada={setTitleClicada}
+                setAbstractClicada={setAbstractClicada}
+                setMultimediaClicada={setMultimediaClicada}
               />
             }
           ></Route>
@@ -119,6 +142,9 @@ function App() {
                   "WELL",
                   "CORONAVIRUS OUTBREAK",
                 ]}
+                setTitleClicada={setTitleClicada}
+                setAbstractClicada={setAbstractClicada}
+                setMultimediaClicada={setMultimediaClicada}
               />
             }
           ></Route>
