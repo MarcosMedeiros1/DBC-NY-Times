@@ -2,12 +2,12 @@ import BotoesHeader from "../../components/BotoesHeader/BotoesHeader";
 import BotoesNoticiaAberta from "../../components/BotoesNoticiaAberta/BotoesNoticiaAberta";
 import style from "./NoticiaAberta.module.css";
 
-function NoticiaAberta({ noticia }) {
+function NoticiaAberta({ noticias }) {
   return (
     <div>
       <BotoesHeader />
       <section className="container">
-        {noticia.map(({ title, abstract, multimedia }, i) => (
+        {noticias.map(({ title, abstract, multimedia }, i) => (
           <div className={style.noticiaRecebida} key={i}>
             <div>
               <h1>{title ? title : "Has no title"}</h1>

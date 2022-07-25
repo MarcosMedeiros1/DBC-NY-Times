@@ -8,7 +8,6 @@ import Layout3Col from "./pages/Layout3/Layout3Col";
 import Layout1Col from "./pages/Layout1/Layout1Col";
 import Layout4 from "./pages/Layout4/Layout4";
 import Footer from "./components/Footer/Footer";
-import NoticiaAberta from "./pages/NoticiaAberta/NoticiaAberta";
 
 function App() {
   const [noticias, setNoticia] = useState([]);
@@ -33,12 +32,6 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home noticias={noticias} />}></Route>
-
-          {/* <Route
-            path="/noticia"
-            element={<NoticiaAberta noticia={noticias} />}
-          ></Route> */}
-
           <Route
             path="/world"
             element={

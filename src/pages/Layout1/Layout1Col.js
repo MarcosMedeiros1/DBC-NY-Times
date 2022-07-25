@@ -1,7 +1,7 @@
 import axios from "axios";
 import moment from "moment";
 import { useEffect, useState } from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import NoticiaAberta from "../NoticiaAberta/NoticiaAberta";
@@ -32,23 +32,19 @@ function Layout1Col({ titulo, opcoes }) {
     return index >= 13 && index <= 15;
   });
 
-  // <Route
-  //   path="/noticia"
-  //   element={<NoticiaAberta noticia={noticias} />}
-  // ></Route>;
-
   return (
     <div className="container">
       <PagesHeader titulo={titulo} opcoes={opcoes} />
       <div className={style.health}>
         <section>
+
           {noticiaFiltrada.map(
             ({ title, abstract, byline, multimedia, published_date }, i) => (
               <div className={style.noticiaPrincipal} key={i}>
                 <div>
                   <h1>
-                    {/* <Link to="/noticia">{title ? title : "Has no title"}</Link> */}
-                    {title ? title : "Has no title"}
+                    <Link to="/noticia">{title ? title : "Has no title"}</Link>
+                    {/* {title ? title : "Has no title"} */}
                   </h1>
 
                   <p>{abstract ? abstract : "Has no description"}</p>

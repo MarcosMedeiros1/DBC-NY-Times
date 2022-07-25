@@ -1,6 +1,8 @@
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import NoticiaAberta from "../../pages/NoticiaAberta/NoticiaAberta";
 import styles from "./HomeMain.module.css";
 
-const HomeMain = ({ noticias }) => {
+const HomeMain = ({ noticias, setParams }) => {
   const noticiasFilter = noticias.filter((noticia, index) => {
     return index % 2;
   });
@@ -12,7 +14,9 @@ const HomeMain = ({ noticias }) => {
           {multimedia ? (
             <>
               <div>
-                <h1>{title}</h1>
+                <h1>
+                  <Link to="/noticia">{title}</Link>
+                </h1>
                 {abstract ? <p>{abstract}</p> : ""}
               </div>
               <div>
