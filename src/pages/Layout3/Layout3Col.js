@@ -1,12 +1,20 @@
 import axios from "axios";
 import moment from "moment";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import style from "./Layout3Col.module.css";
 
-function LayoutCol3({ titulo, pagina, opcoes, setTitleClicada, setAbstractClicada, setMultimediaClicada }) {
+function LayoutCol3({
+  titulo,
+  pagina,
+  opcoes,
+  setTitleClicada,
+  setAbstractClicada,
+  setMultimediaClicada,
+  setKickerClicada,
+}) {
   const [noticias, setNoticias] = useState([]);
   async function setup() {
     try {
@@ -32,10 +40,11 @@ function LayoutCol3({ titulo, pagina, opcoes, setTitleClicada, setAbstractClicad
     return index >= 5 && index <= 6;
   });
 
-  function setValores(title, abstract, multimedia) {
+  function setValores(title, abstract, multimedia, kicker) {
     setTitleClicada(title);
     setAbstractClicada(abstract);
     setMultimediaClicada(multimedia);
+    setKickerClicada(kicker);
   }
 
   return (
@@ -44,14 +53,33 @@ function LayoutCol3({ titulo, pagina, opcoes, setTitleClicada, setAbstractClicad
       <div className="container">
         <section className={style.section}>
           {noticiaPrincipal.map(
-            ({ title, abstract, byline, multimedia, published_date }, i) => (
+            (
+              { title, abstract, byline, multimedia, published_date, kicker },
+              i,
+            ) => (
               <div className={style.primaria} key={i}>
                 <div>
-                  <Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}><img src={multimedia ? multimedia[1].url : "./"} alt="" /></Link>
-                  <span>{multimedia ? multimedia[1].copyright : "."}</span>
+                  <Link
+                    to="/noticia"
+                    onClick={() =>
+                      setValores(title, abstract, multimedia[1].url, kicker)
+                    }
+                  >
+                    <img src={multimedia ? multimedia[0].url : "./"} alt="" />
+                  </Link>
+                  <span>{multimedia ? multimedia[0].copyright : "."}</span>
                 </div>
                 <div>
-                  <h1><Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}>{title ? title : "Has no title"}</Link></h1>
+                  <h1>
+                    <Link
+                      to="/noticia"
+                      onClick={() =>
+                        setValores(title, abstract, multimedia[1].url, kicker)
+                      }
+                    >
+                      {title ? title : "Has no title"}
+                    </Link>
+                  </h1>
                   <p>{abstract ? abstract : "Has no description"}</p>
                   <span>
                     {moment(published_date).format("hh:mm")}h -{" "}
@@ -64,14 +92,33 @@ function LayoutCol3({ titulo, pagina, opcoes, setTitleClicada, setAbstractClicad
 
           <div className={style.secundaria}>
             {noticiaSecundaria.map(
-              ({ title, abstract, byline, multimedia, published_date }, i) => (
+              (
+                { title, abstract, byline, multimedia, published_date, kicker },
+                i,
+              ) => (
                 <div key={i}>
                   <div>
-                    <Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}><img src={multimedia ? multimedia[1].url : "./"} alt="" /></Link>
+                    <Link
+                      to="/noticia"
+                      onClick={() =>
+                        setValores(title, abstract, multimedia[1].url, kicker)
+                      }
+                    >
+                      <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                    </Link>
                     <span>{multimedia ? multimedia[1].copyright : "."}</span>
                   </div>
                   <div>
-                    <h1><Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}>{title ? title : "Has no title"}</Link></h1>
+                    <h1>
+                      <Link
+                        to="/noticia"
+                        onClick={() =>
+                          setValores(title, abstract, multimedia[1].url, kicker)
+                        }
+                      >
+                        {title ? title : "Has no title"}
+                      </Link>
+                    </h1>
                     <p>{abstract ? abstract : "Has no description"}</p>
                     <span>
                       {moment(published_date).format("hh:mm")}h -{" "}
@@ -85,13 +132,36 @@ function LayoutCol3({ titulo, pagina, opcoes, setTitleClicada, setAbstractClicad
 
           <div className={style.aside}>
             {noticiaAside.map(
-              ({ title, abstract, byline, multimedia, published_date }, i) => (
+              (
+                { title, abstract, byline, multimedia, published_date, kicker },
+                i,
+              ) => (
                 <div key={i}>
                   <div>
-                    <h1><Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}>{title ? title : "Has no title"}</Link></h1>
+                    <h1>
+                      <Link
+                        to="/noticia"
+                        onClick={() =>
+                          setValores(title, abstract, multimedia[1].url, kicker)
+                        }
+                      >
+                        {title ? title : "Has no title"}
+                      </Link>
+                    </h1>
 
                     <p>
-                      <Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}> <img src={multimedia ? multimedia[1].url : "./"} alt="" /></Link>
+                      <Link
+                        to="/noticia"
+                        onClick={() =>
+                          setValores(title, abstract, multimedia[1].url, kicker)
+                        }
+                      >
+                        {" "}
+                        <img
+                          src={multimedia ? multimedia[1].url : "./"}
+                          alt=""
+                        />
+                      </Link>
                       {abstract ? abstract : "Has no description"}
                     </p>
                     <span>
@@ -105,11 +175,13 @@ function LayoutCol3({ titulo, pagina, opcoes, setTitleClicada, setAbstractClicad
           </div>
         </section>
       </div>
-      <GaleriaNoticia 
-      noticias={noticias}
-      setTitleClicada={setTitleClicada}
-      setAbstractClicada={setAbstractClicada}
-      setMultimediaClicada={setMultimediaClicada} />
+      <GaleriaNoticia
+        noticias={noticias}
+        setTitleClicada={setTitleClicada}
+        setAbstractClicada={setAbstractClicada}
+        setMultimediaClicada={setMultimediaClicada}
+        setKickerClicada={setKickerClicada}
+      />
     </div>
   );
 }

@@ -1,21 +1,27 @@
 .btn1 {
-    font-size: 14px;
-    width: 140px;
-    height: 35px;
-    padding: 6px 10px;
-    background-color: #fff;
-    border: 2px solid hsla(0,0%,87.46%,1);
-    border-radius: 20px;
-    margin: 0 3px 0 0;
-    cursor: pointer;
+  font-size: 14px;
+  width: 140px;
+  height: 35px;
+  padding: 6px 10px;
+  background-color: #fff;
+  border: 2px solid hsla(0, 0%, 87.46%, 1);
+  border-radius: 20px;
+  margin: 0 3px 0 0;
+  cursor: pointer;
 }
 
-.btn2, .btn3 {
-    width: 35px;
-    height: 35px;
-    margin: 0 3px;
-    background-color: #fff;
-    border: 2px solid hsla(0,0%,87.46%,1);
-    border-radius: 100%;
-    cursor: pointer;
+.btn2 {
+  width: 35px;
+  height: 35px;
+  margin: 0 3px;
+  padding: 8px;
+  background-color: #fff;
+  border: 2px solid hsla(0, 0%, 87.46%, 1);
+  border-radius: 100%;
+  cursor: pointer;
+}
+
+.btn1:hover,
+.btn2:hover {
+  background-color: hsla(0, 0%, 87.46%, 1);
 }

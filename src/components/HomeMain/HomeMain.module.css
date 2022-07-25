@@ -13,8 +13,12 @@ main h1 {
   margin-bottom: 10px;
 }
 
-main h1:hover {
-  text-decoration: underline;
+main h1 > a {
+  text-decoration: none;
+  color: #000;
+}
+main h1 > a:hover {
+  color: #5a5a5a;
 }
 
 main p {
@@ -43,6 +47,9 @@ main > div {
 
 main > div > div:first-child {
   padding-right: 16px;
+}
+
+main > div > div:first-child:hover {
 }
 
 main > div > div:last-child {

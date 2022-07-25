@@ -19,14 +19,20 @@
 }
 
 .noticiaPrincipal h1 {
-  font-size: 35px;
+  font-size: 38px;
   line-height: 50px;
   font-weight: 200;
 }
 
-.noticiaPrincipal h1:hover,
-.cardNoticia h2:hover {
+.noticiaPrincipal h1 > a:hover,
+.cardNoticia h2 > a:hover {
   text-decoration: underline;
+}
+
+.noticiaPrincipal h1 > a,
+.cardNoticia h2 > a {
+  text-decoration: none;
+  color: #000;
 }
 
 .noticiaPrincipal p {

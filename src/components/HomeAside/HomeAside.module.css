@@ -20,8 +20,13 @@
   font-size: 18px;
 }
 
-.homeAside h1:hover {
-  text-decoration: underline;
+.homeAside h1 > a {
+  color: #000;
+  text-decoration: none;
+}
+
+.homeAside h1 > a:hover {
+  color: #5a5a5a;
 }
 
 .homeAside > div {

@@ -1,28 +1,29 @@
-.noticiaRecebida{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    
+.noticiaRecebida {
+  display: grid;
+  grid-template-columns: 600px;
+  justify-content: center;
+  align-items: center;
 }
 
-.noticiaRecebida h1{
-    width: 600px;
-    margin: 50px auto 0 auto;
-    font-size: 36px;
-    line-height: 40px;
+.noticiaRecebida h1 {
+  font-style: italic;
+  margin: 50px auto 0 auto;
+  font-size: 36px;
+  line-height: 40px;
 }
 
-.noticiaRecebida p{
-    width: 600px;
-    font-size: 20px;
-    line-height: 28px;
-    margin: 15px auto 30px auto;
-    padding-bottom: 30px;
-    border-bottom: 2px solid hsla(0,0%,87.46%,1);
+.noticiaRecebida p {
+  font-size: 20px;
+  line-height: 28px;
+  margin: 15px auto 30px auto;
+  padding-bottom: 30px;
+  border-bottom: 2px solid hsla(0, 0%, 87.46%, 1);
+}
+
+.noticiaRecebida p:last-child {
+  border: none;
 }
 
 .noticiaRecebida img {
-    margin: 30px auto;
-    width: 950px;
+  margin: 30px 0;
 }

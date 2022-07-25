@@ -16,7 +16,12 @@
   width: 100%;
 }
 
-.galeriaNoticia span:hover {
+.galeriaNoticia span > a {
+  text-decoration: none;
+  color: #000;
+}
+
+.galeriaNoticia span > a:hover {
   text-decoration: underline;
 }
 

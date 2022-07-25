@@ -20,9 +20,16 @@
   margin-top: 20px;
 }
 
-.primaria h1:hover,
-.secundaria h1:hover,
-.aside h1:hover {
+.primaria h1 > a,
+.secundaria h1 > a,
+.aside h1 > a {
+  text-decoration: none;
+  color: #000;
+}
+
+.primaria h1 > a:hover,
+.secundaria h1 > a:hover,
+.aside h1 > a:hover {
   text-decoration: underline;
 }
 

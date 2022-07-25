@@ -41,8 +41,14 @@
   font-size: 20px;
 }
 
-.layoutPrincipal h1:hover,
-.asideLayout4 h2:hover {
+.layoutPrincipal h1 > a,
+.asideLayout4 h2 > a {
+  text-decoration: none;
+  color: #000;
+}
+
+.layoutPrincipal h1 > a:hover,
+.asideLayout4 h2 > a:hover {
   text-decoration: underline;
 }
 

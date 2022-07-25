@@ -5,7 +5,15 @@ import { Link } from "react-router-dom";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import style from "./Layout4.module.css";
 
-function Layout4({ titulo, pagina, opcoes, setTitleClicada, setAbstractClicada, setMultimediaClicada }) {
+function Layout4({
+  titulo,
+  pagina,
+  opcoes,
+  setTitleClicada,
+  setAbstractClicada,
+  setMultimediaClicada,
+  setKickerClicada,
+}) {
   const [noticias, setNoticias] = useState([]);
 
   async function setup() {
@@ -30,10 +38,11 @@ function Layout4({ titulo, pagina, opcoes, setTitleClicada, setAbstractClicada, 
     return index >= 5 && index <= 6;
   });
 
-  function setValores(title, abstract, multimedia){
+  function setValores(title, abstract, multimedia, kicker) {
     setTitleClicada(title);
     setAbstractClicada(abstract);
     setMultimediaClicada(multimedia);
+    setKickerClicada(kicker);
   }
 
   return (
@@ -44,32 +53,62 @@ function Layout4({ titulo, pagina, opcoes, setTitleClicada, setAbstractClicada, 
         <section className={style.displayGrid}>
           <div>
             {noticiasPrincipal.map(
-              ({ title, abstract, byline, multimedia, published_date }, i) => (
-                
-                    <div className={style.layoutPrincipal} key={i}>
-                      <div>
-                        <h1><Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}>{title ? title : "Has no title"}</Link></h1>
-                        <p>{abstract ? abstract : "Has no description"}</p>
-                        <span>
-                          {moment(published_date).format("hh:mm")}h -{" "}
-                          {byline ? byline : "Has no copyright"}
-                        </span>
-                      </div>
-                      <div>
-                        <Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}><img src={multimedia ? multimedia[1].url : "./"} alt="" /></Link>
-                        <small>{multimedia ? multimedia[1].copyright : "."}</small>
-                      </div>
-                    </div>
+              (
+                { title, abstract, byline, multimedia, published_date, kicker },
+                i,
+              ) => (
+                <div className={style.layoutPrincipal} key={i}>
+                  <div>
+                    <h1>
+                      <Link
+                        to="/noticia"
+                        onClick={() =>
+                          setValores(title, abstract, multimedia[1].url, kicker)
+                        }
+                      >
+                        {title ? title : "Has no title"}
+                      </Link>
+                    </h1>
+                    <p>{abstract ? abstract : "Has no description"}</p>
+                    <span>
+                      {moment(published_date).format("hh:mm")}h -{" "}
+                      {byline ? byline : "Has no copyright"}
+                    </span>
+                  </div>
+                  <div>
+                    <Link
+                      to="/noticia"
+                      onClick={() =>
+                        setValores(title, abstract, multimedia[1].url, kicker)
+                      }
+                    >
+                      <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                    </Link>
+                    <small>{multimedia ? multimedia[1].copyright : "."}</small>
+                  </div>
+                </div>
               ),
             )}
           </div>
 
           <div className={style.columnNoticias}>
             {noticiasAside.map(
-              ({ title, abstract, byline, multimedia, published_date }, i) => (
+              (
+                { title, abstract, byline, multimedia, published_date, kicker },
+                i,
+              ) => (
                 <aside className={style.asideLayout4} key={i}>
                   <div>
-                    <h2><Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}>{title ? title : "Has no title"}</Link></h2>
+                    <h2>
+                      <Link
+                        to="/noticia"
+                        onClick={() =>
+                          setValores(title, abstract, multimedia[1].url, kicker)
+                        }
+                      >
+                        {title ? title : "Has no title"}
+                      </Link>
+                    </h2>
                   </div>
                   <div
                     className={`${style.displayFlex} ${style.flexDirection}`}
@@ -82,7 +121,17 @@ function Layout4({ titulo, pagina, opcoes, setTitleClicada, setAbstractClicada, 
                       </span>
                     </div>
                     <div>
-                    <Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}><img src={multimedia ? multimedia[2].url : "./"} alt="" /></Link>
+                      <Link
+                        to="/noticia"
+                        onClick={() =>
+                          setValores(title, abstract, multimedia[1].url, kicker)
+                        }
+                      >
+                        <img
+                          src={multimedia ? multimedia[2].url : "./"}
+                          alt=""
+                        />
+                      </Link>
                     </div>
                   </div>
                 </aside>

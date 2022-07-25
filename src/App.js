@@ -15,6 +15,7 @@ function App() {
   const [titleClicada, setTitleClicada] = useState([]);
   const [abstractClicada, setAbstractClicada] = useState([]);
   const [multimediaClicada, setMultimediaClicada] = useState([]);
+  const [kickerClicada, setKickerClicada] = useState([]);
 
   const key = "lJ6gYehzzdeNq5HGGB5WrW5SmkHtB5dY";
   const setup = async () => {
@@ -43,17 +44,23 @@ function App() {
                 titleClicada={titleClicada}
                 abstractClicada={abstractClicada}
                 multimediaClicada={multimediaClicada}
+                kickerClicada={kickerClicada}
               />
             }
           ></Route>
 
           <Route
             path="/"
-            element={<Home
-              noticias={noticias}
-              setTitleClicada={setTitleClicada}
-              setAbstractClicada={setAbstractClicada}
-              setMultimediaClicada={setMultimediaClicada} />}></Route>
+            element={
+              <Home
+                noticias={noticias}
+                setTitleClicada={setTitleClicada}
+                setAbstractClicada={setAbstractClicada}
+                setMultimediaClicada={setMultimediaClicada}
+                setKickerClicada={setKickerClicada}
+              />
+            }
+          ></Route>
 
           <Route
             path="/world"
@@ -73,6 +80,7 @@ function App() {
                 setTitleClicada={setTitleClicada}
                 setAbstractClicada={setAbstractClicada}
                 setMultimediaClicada={setMultimediaClicada}
+                setKickerClicada={setKickerClicada}
               />
             }
           ></Route>
@@ -86,6 +94,7 @@ function App() {
                 setTitleClicada={setTitleClicada}
                 setAbstractClicada={setAbstractClicada}
                 setMultimediaClicada={setMultimediaClicada}
+                setKickerClicada={setKickerClicada}
               />
             }
           ></Route>
@@ -110,6 +119,7 @@ function App() {
                 setTitleClicada={setTitleClicada}
                 setAbstractClicada={setAbstractClicada}
                 setMultimediaClicada={setMultimediaClicada}
+                setKickerClicada={setKickerClicada}
               />
             }
           ></Route>
@@ -131,6 +141,7 @@ function App() {
                 setTitleClicada={setTitleClicada}
                 setAbstractClicada={setAbstractClicada}
                 setMultimediaClicada={setMultimediaClicada}
+                setKickerClicada={setKickerClicada}
               />
             }
           ></Route>
@@ -150,6 +161,7 @@ function App() {
                 setTitleClicada={setTitleClicada}
                 setAbstractClicada={setAbstractClicada}
                 setMultimediaClicada={setMultimediaClicada}
+                setKickerClicada={setKickerClicada}
               />
             }
           ></Route>
