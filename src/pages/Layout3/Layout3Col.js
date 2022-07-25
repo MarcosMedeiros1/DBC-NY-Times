@@ -1,11 +1,12 @@
 import axios from "axios";
 import moment from "moment";
+import {Link} from "react-router-dom"
 import { useEffect, useState } from "react";
 import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import style from "./Layout3Col.module.css";
 
-function LayoutCol3({ titulo, pagina, opcoes }) {
+function LayoutCol3({ titulo, pagina, opcoes, setTitleClicada, setAbstractClicada, setMultimediaClicada }) {
   const [noticias, setNoticias] = useState([]);
   async function setup() {
     try {
@@ -31,6 +32,12 @@ function LayoutCol3({ titulo, pagina, opcoes }) {
     return index >= 5 && index <= 6;
   });
 
+  function setValores(title, abstract, multimedia) {
+    setTitleClicada(title);
+    setAbstractClicada(abstract);
+    setMultimediaClicada(multimedia);
+  }
+
   return (
     <div>
       <PagesHeader titulo={titulo} opcoes={opcoes} />
@@ -40,11 +47,11 @@ function LayoutCol3({ titulo, pagina, opcoes }) {
             ({ title, abstract, byline, multimedia, published_date }, i) => (
               <div className={style.primaria} key={i}>
                 <div>
-                  <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                  <Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}><img src={multimedia ? multimedia[1].url : "./"} alt="" /></Link>
                   <span>{multimedia ? multimedia[1].copyright : "."}</span>
                 </div>
                 <div>
-                  <h1>{title ? title : "Has no title"}</h1>
+                  <h1><Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}>{title ? title : "Has no title"}</Link></h1>
                   <p>{abstract ? abstract : "Has no description"}</p>
                   <span>
                     {moment(published_date).format("hh:mm")}h -{" "}
@@ -60,11 +67,11 @@ function LayoutCol3({ titulo, pagina, opcoes }) {
               ({ title, abstract, byline, multimedia, published_date }, i) => (
                 <div key={i}>
                   <div>
-                    <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                    <Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}><img src={multimedia ? multimedia[1].url : "./"} alt="" /></Link>
                     <span>{multimedia ? multimedia[1].copyright : "."}</span>
                   </div>
                   <div>
-                    <h1>{title ? title : "Has no title"}</h1>
+                    <h1><Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}>{title ? title : "Has no title"}</Link></h1>
                     <p>{abstract ? abstract : "Has no description"}</p>
                     <span>
                       {moment(published_date).format("hh:mm")}h -{" "}
@@ -81,10 +88,10 @@ function LayoutCol3({ titulo, pagina, opcoes }) {
               ({ title, abstract, byline, multimedia, published_date }, i) => (
                 <div key={i}>
                   <div>
-                    <h1>{title ? title : "Has no title"}</h1>
+                    <h1><Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}>{title ? title : "Has no title"}</Link></h1>
 
                     <p>
-                      <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                      <Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}> <img src={multimedia ? multimedia[1].url : "./"} alt="" /></Link>
                       {abstract ? abstract : "Has no description"}
                     </p>
                     <span>
@@ -98,7 +105,11 @@ function LayoutCol3({ titulo, pagina, opcoes }) {
           </div>
         </section>
       </div>
-      <GaleriaNoticia noticias={noticias} />
+      <GaleriaNoticia 
+      noticias={noticias}
+      setTitleClicada={setTitleClicada}
+      setAbstractClicada={setAbstractClicada}
+      setMultimediaClicada={setMultimediaClicada} />
     </div>
   );
 }

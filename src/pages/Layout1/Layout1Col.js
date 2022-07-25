@@ -7,7 +7,7 @@ import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import NoticiaAberta from "../NoticiaAberta/NoticiaAberta";
 import style from "./Layout1Col.module.css";
 
-function Layout1Col({ titulo, opcoes }) {
+function Layout1Col({ titulo, opcoes, setTitleClicada, setAbstractClicada, setMultimediaClicada }) {
   const [noticias, setNoticias] = useState([]);
 
   async function setup() {
@@ -32,6 +32,12 @@ function Layout1Col({ titulo, opcoes }) {
     return index >= 13 && index <= 15;
   });
 
+  function setValores(title, abstract, multimedia){
+    setTitleClicada(title);
+    setAbstractClicada(abstract);
+    setMultimediaClicada(multimedia);
+  }
+
   return (
     <div className="container">
       <PagesHeader titulo={titulo} opcoes={opcoes} />
@@ -43,8 +49,8 @@ function Layout1Col({ titulo, opcoes }) {
               <div className={style.noticiaPrincipal} key={i}>
                 <div>
                   <h1>
-                    <Link to="/noticia">{title ? title : "Has no title"}</Link>
-                    {/* {title ? title : "Has no title"} */}
+                  <Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}>
+                    {title ? title : "Has no title"}</Link>
                   </h1>
 
                   <p>{abstract ? abstract : "Has no description"}</p>
@@ -54,7 +60,7 @@ function Layout1Col({ titulo, opcoes }) {
                   </span>
                 </div>
                 <div>
-                  <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+                <Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}><img src={multimedia ? multimedia[1].url : "./"} alt="" /></Link>
                   <span>{multimedia ? multimedia[1].copyright : "."}</span>
                 </div>
               </div>
@@ -67,11 +73,11 @@ function Layout1Col({ titulo, opcoes }) {
             ({ title, abstract, byline, multimedia, published_date }, i) => (
               <div className={style.cardNoticia} key={i}>
                 <div>
-                  <img src={multimedia ? multimedia[2].url : "./"} alt="" />
+                <Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}><img src={multimedia ? multimedia[2].url : "./"} alt="" /></Link>
                   <span>{multimedia ? multimedia[1].copyright : "."}</span>
                 </div>
                 <div>
-                  <h2>{title ? title : "Has no title"}</h2>
+                  <h2><Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}>{title ? title : "Has no title"}</Link></h2>
                   <p>{abstract ? abstract : "Has no description"}</p>
                   <span>
                     {moment(published_date).format("hh:mm")}h -{" "}
@@ -83,7 +89,11 @@ function Layout1Col({ titulo, opcoes }) {
           )}
         </section>
       </div>
-      <GaleriaNoticia noticias={noticias} />
+      <GaleriaNoticia 
+      noticias={noticias}
+      setTitleClicada={setTitleClicada}
+      setAbstractClicada={setAbstractClicada}
+      setMultimediaClicada={setMultimediaClicada}  />
     </div>
   );
 }

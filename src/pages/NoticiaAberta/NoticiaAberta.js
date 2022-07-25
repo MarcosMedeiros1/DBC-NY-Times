@@ -2,23 +2,24 @@ import BotoesHeader from "../../components/BotoesHeader/BotoesHeader";
 import BotoesNoticiaAberta from "../../components/BotoesNoticiaAberta/BotoesNoticiaAberta";
 import style from "./NoticiaAberta.module.css";
 
-function NoticiaAberta({ noticias }) {
+function NoticiaAberta({ titleClicada, abstractClicada, multimediaClicada }) {
   return (
     <div>
       <BotoesHeader />
       <section className="container">
-        {noticias.map(({ title, abstract, multimedia }, i) => (
-          <div className={style.noticiaRecebida} key={i}>
-            <div>
-              <h1>{title ? title : "Has no title"}</h1>
-              <p>{abstract ? abstract : "Has no description"}</p>
-              <BotoesNoticiaAberta />
-            </div>
-            <div>
-              <img src={multimedia ? multimedia[1].url : "./"} alt="" />
-            </div>
+
+        <div className={style.noticiaRecebida}>
+          <div>
+            <h1>{titleClicada}</h1>
+            <p>{abstractClicada}</p>
+            <BotoesNoticiaAberta />
           </div>
-        ))}
+          <div>
+            <img src={multimediaClicada} alt="" />
+
+          </div>
+        </div>
+
       </section>
     </div>
   );
