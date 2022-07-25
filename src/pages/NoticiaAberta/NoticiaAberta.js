@@ -14,7 +14,7 @@ function NoticiaAberta({
   useEffect(() => {
     console.log(titleClicada);
     if (titleClicada.length <= 0) {
-      navigate("/");
+      navigate(-1);
     }
   }, []);
 
