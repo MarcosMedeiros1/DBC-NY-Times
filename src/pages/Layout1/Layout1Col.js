@@ -1,10 +1,9 @@
 import axios from "axios";
 import moment from "moment";
 import { useEffect, useState } from "react";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { Link } from "react-router-dom";
 import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
-import NoticiaAberta from "../NoticiaAberta/NoticiaAberta";
 import style from "./Layout1Col.module.css";
 
 function Layout1Col({
