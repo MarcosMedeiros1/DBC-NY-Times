@@ -9,6 +9,7 @@
 
 .layoutPrincipal {
   text-align: center;
+  position: relative;
 }
 
 .layoutPrincipal > div:first-child {
@@ -48,11 +49,12 @@
   width: 100%;
 }
 
-.layoutPrincipal::before {
+.layoutPrincipal::after {
   content: "";
   height: 100%;
   position: absolute;
-  right: 35.4rem;
+  right: -1.3rem;
+  top: 0rem;
   border-left: 1px solid #dfdfef;
 }
 
