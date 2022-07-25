@@ -1,9 +1,17 @@
 import styles from "./HomeMain.module.css";
+import { Link } from "react-router-dom";
 
-const HomeMain = ({ noticias }) => {
+const HomeMain = ({ noticias, setTitleClicada, setAbstractClicada, setMultimediaClicada }) => {
+  
   const noticiasFilter = noticias.filter((noticia, index) => {
     return index % 2;
   });
+
+  function setValores(title, abstract, multimedia){
+    setTitleClicada(title);
+    setAbstractClicada(abstract);
+    setMultimediaClicada(multimedia);
+  }
 
   return (
     <main>
@@ -12,11 +20,11 @@ const HomeMain = ({ noticias }) => {
           {multimedia ? (
             <>
               <div>
-                <h1>{title}</h1>
+                <h1><Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}>{title}</Link></h1>
                 {abstract ? <p>{abstract}</p> : ""}
               </div>
               <div>
-                <img src={multimedia ? multimedia[1].url : "./"} alt="" />
+              <Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}><img src={multimedia ? multimedia[1].url : "./"} alt="" /></Link>
                 <small>{multimedia ? multimedia[1].copyright : "."}</small>
               </div>
             </>

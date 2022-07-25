@@ -45,7 +45,13 @@ function App() {
               multimediaClicada={multimediaClicada} />}
           ></Route>
 
-          <Route path="/" element={<Home noticias={noticias} />}></Route>
+          <Route
+            path="/"
+            element={<Home
+              noticias={noticias}
+              setTitleClicada={setTitleClicada}
+              setAbstractClicada={setAbstractClicada}
+              setMultimediaClicada={setMultimediaClicada} />}></Route>
 
           <Route
             path="/world"
@@ -67,7 +73,7 @@ function App() {
                 setMultimediaClicada={setMultimediaClicada}
               />
             }
-            
+
           ></Route>
           <Route
             path="/politics"
@@ -75,9 +81,9 @@ function App() {
               <Layout4
                 titulo="U.S. Politic"
                 pagina="politics"
-                opcoes={["JOE BIDEN", "2022 MIDTERM ELECTIONS"]}                
-                setTitleClicada={setTitleClicada}               
-                setAbstractClicada={setAbstractClicada}                
+                opcoes={["JOE BIDEN", "2022 MIDTERM ELECTIONS"]}
+                setTitleClicada={setTitleClicada}
+                setAbstractClicada={setAbstractClicada}
                 setMultimediaClicada={setMultimediaClicada}
 
               />
@@ -101,9 +107,9 @@ function App() {
                   "YOUR MONEY",
                   "MUTUAL FUNDS AND ETFS",
                 ]}
-                
-                setTitleClicada={setTitleClicada}                
-                setAbstractClicada={setAbstractClicada}               
+
+                setTitleClicada={setTitleClicada}
+                setAbstractClicada={setAbstractClicada}
                 setMultimediaClicada={setMultimediaClicada}
               />
             }

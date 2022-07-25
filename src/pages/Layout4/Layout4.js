@@ -69,7 +69,7 @@ function Layout4({ titulo, pagina, opcoes, setTitleClicada, setAbstractClicada, 
               ({ title, abstract, byline, multimedia, published_date }, i) => (
                 <aside className={style.asideLayout4} key={i}>
                   <div>
-                    <h2>{title ? title : "Has no title"}</h2>
+                    <h2><Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}>{title ? title : "Has no title"}</Link></h2>
                   </div>
                   <div
                     className={`${style.displayFlex} ${style.flexDirection}`}
@@ -82,7 +82,7 @@ function Layout4({ titulo, pagina, opcoes, setTitleClicada, setAbstractClicada, 
                       </span>
                     </div>
                     <div>
-                      <img src={multimedia ? multimedia[2].url : "./"} alt="" />
+                    <Link to='/noticia' onClick={() => setValores(title, abstract, multimedia[1].url)}><img src={multimedia ? multimedia[2].url : "./"} alt="" /></Link>
                     </div>
                   </div>
                 </aside>
