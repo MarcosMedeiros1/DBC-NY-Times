@@ -1,7 +1,7 @@
 import axios from "axios";
 import moment from "moment";
 import { useEffect, useState } from "react";
-import { Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import GaleriaNoticia from "../../components/GaleriaNoticia/GaleriaNoticia";
 import PagesHeader from "../../components/PagesHeader/PagesHeader";
 import NoticiaAberta from "../NoticiaAberta/NoticiaAberta";
@@ -43,6 +43,7 @@ function Layout1Col({ titulo, opcoes, setTitleClicada, setAbstractClicada, setMu
       <PagesHeader titulo={titulo} opcoes={opcoes} />
       <div className={style.health}>
         <section>
+
           {noticiaFiltrada.map(
             ({ title, abstract, byline, multimedia, published_date }, i) => (
               <div className={style.noticiaPrincipal} key={i}>

@@ -36,13 +36,15 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-
           <Route
             path="/noticia"
-            element={<NoticiaAberta
-              titleClicada={titleClicada}
-              abstractClicada={abstractClicada}
-              multimediaClicada={multimediaClicada} />}
+            element={
+              <NoticiaAberta
+                titleClicada={titleClicada}
+                abstractClicada={abstractClicada}
+                multimediaClicada={multimediaClicada}
+              />
+            }
           ></Route>
 
           <Route
@@ -73,7 +75,6 @@ function App() {
                 setMultimediaClicada={setMultimediaClicada}
               />
             }
-
           ></Route>
           <Route
             path="/politics"
@@ -85,7 +86,6 @@ function App() {
                 setTitleClicada={setTitleClicada}
                 setAbstractClicada={setAbstractClicada}
                 setMultimediaClicada={setMultimediaClicada}
-
               />
             }
           ></Route>
@@ -107,7 +107,6 @@ function App() {
                   "YOUR MONEY",
                   "MUTUAL FUNDS AND ETFS",
                 ]}
-
                 setTitleClicada={setTitleClicada}
                 setAbstractClicada={setAbstractClicada}
                 setMultimediaClicada={setMultimediaClicada}

@@ -1,5 +1,6 @@
+import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import NoticiaAberta from "../../pages/NoticiaAberta/NoticiaAberta";
 import styles from "./HomeMain.module.css";
-import { Link } from "react-router-dom";
 
 const HomeMain = ({ noticias, setTitleClicada, setAbstractClicada, setMultimediaClicada }) => {
   

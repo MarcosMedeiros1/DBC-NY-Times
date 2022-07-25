@@ -1,5 +1,6 @@
 .live > div {
   font-weight: bold;
+  font-family: Helvetica, Arial, sans-serif;
 }
 
 .live > div:first-child > span:first-child {
@@ -10,6 +11,7 @@
 }
 
 .live > div > span {
+  font-family: Helvetica, Arial, sans-serif;
   font-weight: normal;
   color: #d0021b;
   font-size: 12px;
